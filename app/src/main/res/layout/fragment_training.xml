@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorSecondary"
+    tools:context=".ui.fragments.TrainingFragment"
+    android:id="@+id/training_menu_layout">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_training_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="?attr/actionBarSize"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sv_products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:queryHint="@string/title_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/ColorSecondary"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_order_filters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/sv_products"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_sort_by_name_ascending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center_vertical"
+                android:text="Sort by name: A-Z"
+                android:textColor="@color/black"/>
+            <ImageButton
+                android:id="@+id/ib_sort_ascending"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/product_item_delete_margin"
+                android:src="@drawable/ic_vector_sort_by_alpha"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_sort_by_name_ascending"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_sort_by_name_descending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center_vertical"
+                android:text="Sort by name: Z-A"
+                android:textColor="@color/black"/>
+            <ImageButton
+                android:id="@+id/ib_sort_descending"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/product_item_delete_margin"
+                android:src="@drawable/ic_vector_sort_by_alpha"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_sort_by_name_descending"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_sort_by_price_ascending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center_vertical"
+                android:text="Sort by price: low to high"
+                android:textColor="@color/black"
+                />
+            <ImageButton
+                android:id="@+id/ib_sort_price_ascending"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/product_item_delete_margin"
+                android:src="@drawable/ic_vector_sort"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_sort_by_price_ascending"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_sort_by_price_descending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center_vertical"
+                android:text="Sort by price: high to low"
+                android:textColor="@color/black"/>
+            <ImageButton
+                android:id="@+id/ib_price_descending"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/content_description"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/product_item_delete_margin"
+                android:src="@drawable/ic_vector_sort"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_sort_by_price_descending"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

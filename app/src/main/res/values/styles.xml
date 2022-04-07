@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    </style>
+    <style name="AppTheme.NoAction">
+        <item name= "windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+<!--    <style name="MyCustomTheme" parent="RaveAppTheme.NoActionBar">-->
+<!--        <item name="colorPrimary">@color/ColorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/ColorPrimary</item>-->
+<!--        <item name="colorAccent">@color/ColorAccent</item>-->
+<!--        <item name="OTPButtonStyle">@style/myOtpBtnStyle</item>-->
+<!--        <item name="PayButtonStyle">@style/myBtnStyle</item>-->
+<!--        <item name="PinButtonStyle">@style/myPinButtonStyle</item>-->
+<!--        <item name="OTPHeaderStyle">@style/myOtpHeaderStyle</item>-->
+<!--        <item name="TabLayoutStyle">@style/myTabLayoutStyle</item>-->
+<!--        <item name="PinHeaderStyle">@style/myPinHeaderStyle</item>-->
+<!--        <item name="PaymentTileStyle">@style/myPaymentTileStyle</item>-->
+<!--        <item name="PaymentTileTextStyle">@style/myPaymentTileTextStyle</item>-->
+<!--        <item name="PaymentTileDividerStyle">@style/myPaymentTileDividerStyle</item>-->
+<!--    </style>-->
+</resources>

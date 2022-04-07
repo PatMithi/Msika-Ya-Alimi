@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_dashboard_customer"
+        android:icon="@drawable/ic_basket"
+        android:title="@string/title_dashboard"/>
+
+    <item
+        android:id="@+id/navigation_categories_customer"
+        android:icon="@drawable/ic_orders"
+        android:title="@string/title_categories"
+        />
+
+    <item
+        android:id="@+id/navigation_search_customer"
+        android:icon="@drawable/ic_search"
+        android:title="@string/title_search"/>
+
+    <item
+        android:id="@+id/navigation_filter"
+        android:icon="@drawable/ic_filter"
+        android:title="Filter" />
+
+</menu>

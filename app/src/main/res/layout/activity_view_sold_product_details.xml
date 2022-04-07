@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.ViewSoldProductDetails"
+    android:background="@color/ColorSecondary">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_view_sold_product_details"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/ColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.example.msikayaalimi.utils.MYATextViewBold
+            android:id="@+id/tv_view_sold_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="-25dp"
+            android:paddingEnd="0dp"
+            android:text="@string/title_sold_products_details"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_view_sold_product_details">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="@string/view_order_details_title"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_order_id"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:id="@+id/tv_sold_products_order_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="93749" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_order_date"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"/>
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:id="@+id/tv_sold_product_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="08 Apr 2022"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="16dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="@string/label_product_items"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <ImageView
+                        android:id="@+id/iv_sold_product_image"
+                        android:layout_width="80dp"
+                        android:layout_height="70dp"
+                        android:contentDescription="@string/content_description"
+                        android:scaleType="fitXY"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.example.msikayaalimi.utils.MYATextViewBold
+                        android:id="@+id/tv_sold_product_item_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="Name"/>
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:id="@+id/tv_sold_product_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="MWK 200"/>
+                </LinearLayout>
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_sold_product_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingStart="16dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="3dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="1" />
+            </LinearLayout>
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/label_shipping_address"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="16dp">
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_sold_product_address_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="Home"/>
+
+                <com.example.msikayaalimi.utils.MYATextViewBold
+                    android:id="@+id/tv_sold_product_full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:text="Pat Mithi" />
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_sold_product_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="XYZ"/>
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_sold_product_additional_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="XYZ"/>
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_sold_product_mobile_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="985498534"/>
+            </LinearLayout>
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="@string/label_order_details_receipt"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/subtotal_label"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"/>
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:id="@+id/tv_sold_product_subtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="MWK 200" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/transaction_fee_label"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:id="@+id/tv_sold_product_trans_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="MWK 9000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.example.msikayaalimi.utils.MYATextViewBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/total_amount_label"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <com.example.msikayaalimi.utils.MYATextViewBold
+                        android:id="@+id/tv_sold_products_total_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="MWK 10000" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.CheckoutActivity"
+    android:background="@color/ColorSecondary">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/checkout_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/ColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.example.msikayaalimi.utils.MYATextViewBold
+            android:id="@+id/tv_title_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="@dimen/toolbar_title_paddingStart"
+            android:paddingEnd="10dp"
+            android:text="@string/checkout_btn_label"
+            android:textColor="@color/white"
+            android:textSize="@dimen/toolbar_title_text_size" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkout_activity_toolbar"
+        android:fillViewport="true"
+        android:scrollbars="none" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_cart_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/checkout_cart_items_marginStartEnd"
+                android:layout_marginTop="@dimen/checkout_cart_items_marginTopBottom"
+                android:layout_marginEnd="@dimen/checkout_cart_items_marginStartEnd"
+                android:paddingTop="@dimen/checkout_cart_items_paddingTopBottom"
+                android:paddingBottom="@dimen/checkout_cart_items_paddingTopBottom"
+                android:text="@string/cart_itemslabel"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_checkout_cart_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_cart_items" />
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_chosen_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_checkout_cart_items"
+                android:layout_marginStart="@dimen/checkout_cart_items_marginStartEnd"
+                android:layout_marginTop="@dimen/checkout_cart_items_marginTopBottom"
+                android:layout_marginEnd="@dimen/checkout_cart_items_marginStartEnd"
+                android:layout_marginBottom="@dimen/checkout_cart_items_marginTopBottom"
+                android:paddingTop="@dimen/checkout_cart_items_paddingTopBottom"
+                android:paddingBottom="@dimen/checkout_cart_items_paddingTopBottom"
+                android:text="@string/label_selected_address"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_address_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_below="@id/tv_chosen_address">
+
+                <com.example.msikayaalimi.utils.MYATextViewBold
+                    android:id="@+id/tv_address_full_checkout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/et_textSize"
+                    tools:text="Pat Mithi"/>
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_address_type_checkout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_background_filled"
+                    android:paddingStart="@dimen/address_rv_textPaddongStartEnd"
+                    android:paddingTop="@dimen/rv_address_text_paddingTopBottom"
+                    android:paddingEnd="@dimen/address_rv_textPaddongStartEnd"
+                    android:paddingBottom="@dimen/rv_address_text_paddingTopBottom"
+                    android:textColor="@color/white"
+                    android:text="Home" />
+
+
+            </LinearLayout>
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_address_details_checkout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_address_full_name"
+                android:layout_marginTop="@dimen/rv_address_details_marginTop"
+                android:background="@color/white"
+                android:text="BOX 30497"
+                android:textColor="@color/black"
+                android:textSize="@dimen/label_text_view_textSize" />
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_address_mobile_number_checkout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_address_details_checkout"
+                android:layout_marginTop="@dimen/rv_address_details_marginTop"
+                android:background="@color/white"
+                android:text="+265 989830030"
+                android:textColor="@color/black" />
+
+            <com.example.msikayaalimi.utils.MYATextView
+                android:id="@+id/tv_order_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_address_mobile_number_checkout"
+                android:layout_marginStart="@dimen/checkout_cart_items_marginStartEnd"
+                android:layout_marginTop="@dimen/checkout_cart_items_marginTopBottom"
+                android:layout_marginEnd="@dimen/checkout_cart_items_marginStartEnd"
+                android:layout_marginBottom="@dimen/checkout_cart_items_marginTopBottom"
+                android:paddingTop="@dimen/checkout_cart_items_paddingTopBottom"
+                android:paddingBottom="@dimen/checkout_cart_items_paddingTopBottom"
+                android:text="@string/label_order_details"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_order_details"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/ll_checkout_padding"
+                tools:visibility="visible">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/subtotal_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/checkout_label_value_textSize" />
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:id="@+id/tv_subtotal_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MWK 2000"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/checkout_label_value_textSize" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/transaction_fee_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/checkout_label_value_textSize" />
+
+                    <com.example.msikayaalimi.utils.MYATextView
+                        android:id="@+id/tv_transaction_fee_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MWK 500"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/checkout_label_value_textSize" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.example.msikayaalimi.utils.MYATextViewBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/total_amount_label"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/checkout_label_value_textSize" />
+
+                    <com.example.msikayaalimi.utils.MYATextViewBold
+                        android:id="@+id/tv_total_amount_checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MWK 2500"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/checkout_label_value_textSize" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/rg_payment_options"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/login_btn_height"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@id/til_mobile_number"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_submit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_mobile_number">
+
+                    <com.example.msikayaalimi.utils.MYARadioButton
+                        android:id="@+id/rb_mobile_money"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/mobile_money_label"
+                        android:textColor="@drawable/drawable_gender_tab_tet_color_selector"
+                        android:textStyle="bold" />
+
+                    <com.example.msikayaalimi.utils.MYARadioButton
+                        android:id="@+id/rb_bank_transfer"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/bank_transfer_label"
+                        android:textColor="@drawable/drawable_gender_tab_tet_color_selector"
+                        android:textStyle="bold" />
+                </RadioGroup>
+
+
+                <com.example.msikayaalimi.utils.MYAButton
+                    android:id="@+id/btn_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/ColorPrimary"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/btn_padding"
+                    android:paddingBottom="@dimen/btn_padding"
+                    android:text="@string/pay_btn_label"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/btn_textSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_payment_options" />
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

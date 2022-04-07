@@ -1,0 +1,205 @@
+<resources>
+    // Authentication Strings
+    <string name="app_name">MsikaYaAlimi</string>
+    <string name="content_description">image</string>
+    <string name="title_login">LOGIN</string>
+    <string name="et_hiny_email_id">Email ID</string>
+    <string name="et_hint_password">Password</string>
+    <string name="label_forgot_password">Forgot Password?</string>
+    <string name="btn_lbl_login">Login</string>
+    <string name="no_account">Not Registered Yet?</string>
+    <string name="register">Register</string>
+
+    // Create Account strings
+    <string name="create_an_account">CREATE AN ACCOUNT</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="et_hint_confirm_password">Confirm Password</string>
+    <string name="agreement_terms">I Agree To The <u> Terms &amp; Conditions</u></string>
+    <string name="btn_label_register">Register</string>
+    <string name="already_account">Already have an Account?</string>
+    <string name="login"><u>Login</u></string>
+    <string-array name="user_types">
+        <item>Farmer</item>
+        <item>Customer</item>
+
+    </string-array>
+    <string name="register_success">You have successfully registered your account!</string>
+    <string name="btn_customer_label">Customer</string>
+    <string name="btn_farmer_label">Farmer</string>
+
+    // error message strings
+    <string name="err_msg_enter_first_name">Please Enter first name.</string>
+    <string name="err_msg_enter_last_name">Please enter last name</string>
+    <string name="err_msg_enter_email">Please enter email</string>
+    <string name="err_msg_password">Please enter password</string>
+    <string name="err_msg_confirm_empty">Please enter password confirmation</string>
+    <string name="err_msg_mismatch">Passwords do not matvh</string>
+    <string name="err_msg_terms_and_conditions">Please agree terms and conditions</string>
+    <string name="successful_registration">Your details are valid</string>
+    <string name="please_wait">Please Wait&#8230;</string>
+
+    // Forgot password strings
+    <string name="title_forgot_password">FORGOT PASSWORD</string>
+    <string name="forgot_password_description">Please enter your email address below and we will send you an email with instructions</string>
+    <string name="btn_labl_submit">Submit</string>
+    <string name="email_successfully_sent">An email has been sent to give you instructions on how to reset your password.</string>
+
+    // Profile page
+    <string name="title_complete_profile">PROFILE</string>
+    <string name="et_hint_mobile_number">Mobile Number</string>
+    <string name="btn_label_male">Male</string>
+    <string name="btn_label_female">Female</string>
+    <string name="btn_label_save">Save</string>
+    <string name="denied_storage_access">Uh-oh, looks like you have denied permission to read your storage. In order to change this you will have to do so in the application settings</string>
+    <string name="image_upload_failure">Failed to upload image!</string>
+    <string name="err_msg_enter_mobile_number">Please enter mobile number</string>
+    <string name="msg_profile_successfully_updated">You have successfully updated your profile!</string>
+
+    <!--string name="title_activity_market">MarketActivity</string> -->
+    <string name="title_categories">Products</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_search">Search</string>
+
+    // Customer welcome screen texts
+    <string name="double_click_toExit">Please double click to exit application</string>
+    <string name="app_settings">Settings</string>
+
+    // Settings Page
+    <string name="edit_label">Edit</string>
+    <string name="settings_title">Settings</string>
+    <string name="addresses_label">Addresses</string>
+    <string name="logout_btn_label">Logout</string>
+    <string name="title_logout">Logout</string>
+    <string name="complete_profile_title">COMPLETE PROFILE</string>
+
+    // Add Products Page
+    <string name="add_product_action">Add Product</string>
+    <string name="title_products">Products</string>
+    <string name="et_product_title_hint">Product Title</string>
+    <string name="et_product_price_hint">Price</string>
+    <string name="et_product_description_hint">Product Description</string>
+    <string name="et_product_specification_hint">Product Specification (Weight,size, etc.)</string>
+    <string name="et_product_location_hint">Product Location</string>
+    <string name="et_product_quantity_hint">Product Quantity</string>
+    <string name="submit_btn">Submit</string>
+    <string name="err_msg_select_product_image">Please select an image</string>
+    <string name="err_msg_product_title_prompt">Please enter a product title</string>
+    <string name="err_msg_product_price_prompt">Please enter a price</string>
+    <string name="err_msg_product_description_prompt">Please enter a description</string>
+    <string name="err_msg_product_specification_prompt">Please enter a specification</string>
+    <string name="err_msg_product_location_prompt">Please enter a location</string>
+    <string name="err_msg_product_quantity_prompt">Please enter a quantity</string>
+    <string name="product_Successfully_uploaded">You have suzzessfully uploaded your product</string>
+    <string name="title_activity_market">MarketActivity</string>
+    <string name="no_products_yet">You have not added products yet!</string>
+    <string name="label_animals">Animals</string>
+    <string name="label_fruits">Fruits</string>
+    <string name="label_vegetables">Vegetables</string>
+    <string name="label_eggs_and_dairy">Eggs and Dairy</string>
+    <string name="label_nuts">Nuts</string>
+    <string name="label_product_category">Product Category</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    // MarketActivity and UserProducts strings
+    <string name="empty_market">No products found!</string>
+    <string name="product_successfully_deleted_message">You have successfully deleted a product</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete_dialog_title">Delete</string>
+    <string name="delete_dialog_message">Are you sure you want to delete the selected product?</string>
+
+    // Product Details Activity
+    <string name="product_details_title">Product Details</string>
+    <string name="quantity_label">Quantity:</string>
+    <string name="product_specification_label">Specification</string>
+    <string name="btn_lbl_add_to_cart">ADD TO CART</string>
+    <string name="successfully_added_an_item_to_cart">Item successfully added to cart.</string>
+    <string name="go_to_cart_label">GO TO CART</string>
+
+    // My Cart Activity strings
+    <string name="my_cart_title">My Cart</string>
+    <string name="no_items_in_cart">No Items Found In Cart!</string>
+    <string name="subtotal_label">Subtotal</string>
+    <string name="total_amount_label">Total Amount</string>
+    <string name="checkout_btn_label">Checkout</string>
+    <string name="action_cart">My Cart</string>
+    <string name="transaction_fee_label">Transaction Fee</string>
+    <string name="mobile_money_label">Mobile Money</string>
+    <string name="bank_transfer_label">Bank Transfer</string>
+    <string name="out_of_stock_label">Sorry, Item out of stock!</string>
+    <string name="msg_item_remoed_successfully">You have successfully removed an item from your cart</string>
+    <string name="msg_quantity_max">You have reached the maximum quantity available!</string>
+
+    // AddAddressActivity strings
+    <string name="title_address_activity">Addresses</string>
+    <string name="address_list_empty">No addresses found!</string>
+    <string name="add_address_label">Add Address</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_district">District</string>
+    <string name="hint_additional_note">Additional Note</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_other_details">Other details</string>
+    <string name="label_home">Home</string>
+    <string name="label_office">Office</string>
+    <string name="label_other">Other</string>
+
+    // Training Activity
+    <string name="title_training_activity">Training</string>
+
+    // UpdateAddressActivity strings
+    <string name="err_msg_enter_full_name">Please enter full name</string>
+    <string name="err_msg_enter_address">Please enter address</string>
+    <string name="err_msg_enter_phone_number">Please enter phone number</string>
+    <string name="err_msg_enter_district">Please enter district or region</string>
+    <string name="msg_successfully_added_address">"You have successfully added a new address "</string>
+    <string name="title_edit_address">Edit Address</string>
+    <string name="update_btn_label">Update</string>
+    <string name="msg_successfully_updated_address">You have successfully updated your address</string>
+    <string name="msg_successfully_deleted_address">you have successfully deleted an address</string>
+
+    // Quiz Menu Activity
+    <string name="take_quiz_label">Take Quiz</string>
+    <string name="title_quizzes">Quizzes</string>
+    <string name="quiz_menu"></string>
+    <string name="err_msg_please_select_a_category">Please select a category</string>
+    <string name="empty_filtered_items">Sorry, there are no products for this category!</string>
+    <string name="filtered_items_label">Filtered Items</string>
+    <string name="empty_quiz_menu">Sorry, there are no quizzes at the moment!</string>
+    <string name="select_address_title">Select Address</string>
+    <string name="cart_itemslabel">Cart Items</string>
+    <string name="label_selected_address">Selected Address</string>
+    <string name="label_order_details">Order Details</string>
+    <string name="pay_btn_label">Pay</string>
+    <string name="msg_successfully_placed_order">You have successflly placed an order!</string>
+    <string name="update_profile_title">Update Profile</string>
+    <string name="label_orders">Orders</string>
+
+    // Search strings
+    <string name="search_results_label">Search Results</string>
+    <string name="empty_search_results">Sorry, there are no items for your search</string>
+    <string name="msg_successfully_updated_product">You have successfully updated your product details!</string>
+
+    // Orders fragment
+    <string name="empty_orders">No orders placed yet!</string>
+    <string name="view_order_details_title">Order Details</string>
+    <string name="label_order_id">Order ID</string>
+    <string name="label_order_date">Order Date</string>
+    <string name="label_order_status">Order Status</string>
+    <string name="label_pendind">Pending</string>
+    <string name="label_pending">Pending</string>
+    <string name="label_product_items">Product Items</string>
+    <string name="label_shipping_address">Shipping Address</string>
+    <string name="label_order_details_receipt">Items Receipt</string>
+    <string name="choose_payment_method">Selected Payment Method</string>
+    <string name="order_status_delivered">Delivered</string>
+    <string name="order_status_in_process">Processing</string>
+    <string name="order_status_pending">Pending</string>
+    <string name="title_sold_products">Sold Products</string>
+    <string name="empty_sold_product">No Sold Products Yet!</string>
+    <string name="title_sold_products_details">Sold Products Details</string>
+
+</resources>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.ViewProductDetailsActivity"
+    android:background="@color/white">
+    
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/view_products_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/ColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <com.example.msikayaalimi.utils.MYATextViewBold
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingEnd="50dp"
+            android:text="@string/product_details_title"
+            android:textSize="@dimen/label_text_view_textSize"
+            android:textColor="@color/white" />
+        
+    </androidx.appcompat.widget.Toolbar>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_products_activity_toolbar">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <ImageView
+                android:id="@+id/iv_view_product_details_image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/ColorSecondary"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            
+            <RelativeLayout
+                android:id="@+id/rl_product_details_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_view_product_details_image">
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_product_details_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Product Title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/label_text_view_textSize" />
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_product_details_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tv_product_details_title"
+                    android:layout_marginEnd="5dp"
+                    android:text="MWK 400"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/label_text_view_textSize" />
+
+                <ImageView
+                    android:id="@+id/iv_location"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/tv_product_details_title"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/ic_baseline_location_on_24"
+                    android:tint="@color/black" />
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_product_details_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:layout_toRightOf="@+id/iv_location"
+                    android:text="Lilongwe"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/label_text_view_textSize" />
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/products_specs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_product_details_price"
+                    android:layout_alignRight="@+id/tv_product_details_location"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/product_specification_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/label_text_view_textSize" />
+
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_product_details_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_location"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="start"
+                    android:text="@string/quantity_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/label_text_view_textSize" />
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_product_quantity_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_location"
+                    android:layout_marginTop="30dp"
+                    android:layout_toRightOf="@+id/tv_product_details_quantity"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/label_text_view_textSize" />
+
+                <ImageView
+                    android:id="@+id/iv_user_product_details"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/products_specs"
+                    android:layout_marginTop="24dp"
+                    android:layout_toLeftOf="@id/tv_creator_name"
+                    android:src="@drawable/ic_user_icon_image" />
+
+                <com.example.msikayaalimi.utils.MYATextView
+                    android:id="@+id/tv_creator_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/products_specs"
+                    android:layout_alignRight="@+id/tv_product_quantity_value"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical"
+                    android:text="PALA Constructio"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/label_text_view_textSize" />
+
+            </RelativeLayout>
+
+            <com.example.msikayaalimi.utils.MYAButton
+                android:id="@+id/btn_add_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="28dp"
+                android:background="@drawable/button_background"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingTop="@dimen/btn_padding"
+                android:paddingBottom="@dimen/btn_padding"
+                android:text="@string/btn_lbl_add_to_cart"
+                android:textColor="@color/ColorPrimary"
+                android:textSize="@dimen/btn_textSize"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rl_product_details_top"
+                app:strokeColor="@color/ColorPrimary"
+                app:strokeWidth="4dp"
+                tools:visibility="visible"/>
+
+            <com.example.msikayaalimi.utils.MYAButton
+                android:id="@+id/btn_go_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="28dp"
+                android:background="@color/ColorPrimary"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingTop="@dimen/btn_padding"
+                android:paddingBottom="@dimen/btn_padding"
+                android:text="@string/go_to_cart_label"
+                android:textColor="@color/white"
+                android:textSize="@dimen/btn_textSize"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_add_to_cart"
+                app:strokeColor="@color/ColorPrimary"
+                app:strokeWidth="4dp"
+                tools:visibility="visible"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

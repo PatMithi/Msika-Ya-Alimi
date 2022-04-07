@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "356290313512",
+    "project_id": "msikayaalimi",
+    "storage_bucket": "gs://msikayaalimi.appspot.com/"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356290313512:android:214c157b8ca6cbbbf6641d",
+        "android_client_info": {
+          "package_name": "com.example.msikayaalimi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356290313512-c1upb09f461gfgnuv68h058h104ev16k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.msikayaalimi",
+            "certificate_hash": "4cc2dadb174fd3b6b3b835735083814fbed651ce"
+          }
+        },
+        {
+          "client_id": "356290313512-8qdvekpnrf1r9u2nbmlhqrm6rvlgb9pl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjW3NSw9s64qSJr0rpH8n_EqmZzcTd3Lc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356290313512-8qdvekpnrf1r9u2nbmlhqrm6rvlgb9pl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
