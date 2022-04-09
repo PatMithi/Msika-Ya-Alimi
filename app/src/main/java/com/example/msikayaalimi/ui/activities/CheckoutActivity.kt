@@ -168,8 +168,8 @@ class CheckoutActivity : BaseActivity() {
         val tvTotalAmount = 6000
         RaveUiManager(this)
             .setAmount(mSubTotal.toDouble())
-            .setCurrency("NGN")
-            .setCountry("NG")
+            .setCurrency("MWK")
+            .setCountry("MW")
             .setfName(mUser.firstName)
             .setlName(mUser.lastName)
             .setEmail("")

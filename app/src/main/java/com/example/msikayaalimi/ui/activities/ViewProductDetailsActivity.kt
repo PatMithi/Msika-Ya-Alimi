@@ -26,6 +26,7 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
     private var mProductID: String = ""
     private lateinit var mProductDetails: Product
     private var mProductOwnerId:String = ""
+    private lateinit var mCreatorName:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,8 +49,10 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
         // set an onclicklistener to allow the user to add an item to their cart
         val addToCartButton:MYAButton = findViewById(R.id.btn_add_to_cart)
         val btnGoToCart:MYAButton = findViewById(R.id.btn_go_to_cart)
+        val tvCreator:MYATextView = findViewById(R.id.tv_creator_name)
         addToCartButton.setOnClickListener(this)
         btnGoToCart.setOnClickListener(this)
+        tvCreator.setOnClickListener(this)
     }
 
     // adding back button to the activity
@@ -170,7 +173,8 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
     fun successfullyGotCreatorDetails(user: User){
 
         val tvCreator:MYATextView = findViewById(R.id.tv_creator_name)
-        tvCreator.text = "${user.firstName} ${user.lastName}"
+        mCreatorName = "${user.firstName} ${user.lastName}"
+        tvCreator.text = mCreatorName
     }
 
     private fun addToCart() {
@@ -230,6 +234,13 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
 
                 R.id.btn_go_to_cart ->{
                     startActivity(Intent(this@ViewProductDetailsActivity, MyCartActivity::class.java))
+                }
+
+                R.id.tv_creator_name ->{
+                    val intent = Intent(this, FilteredProductsActivity::class.java)
+                    intent.putExtra(Constants.EXTRA_PRODUCT_OWNER_ID, mProductDetails.user_id)
+                    intent.putExtra(Constants.EXTRA_CREATOR_NAME, mCreatorName)
+                    startActivity(intent)
                 }
 
             }

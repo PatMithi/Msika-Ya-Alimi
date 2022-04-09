@@ -16,6 +16,8 @@ import com.example.msikayaalimi.utils.MYATextViewBold
 class FilteredProductsActivity : BaseActivity() {
 
     private lateinit var mCategory:String
+    private lateinit var mProductOwner:String
+    private lateinit var mCreatorName:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,17 @@ class FilteredProductsActivity : BaseActivity() {
             tvTitle.text = mCategory
 
             getFilteredProducts(mCategory)
+        }
+
+        if (intent.hasExtra(Constants.EXTRA_CREATOR_NAME)){
+            mCreatorName = intent.getStringExtra(Constants.EXTRA_CREATOR_NAME)!!
+            val tvTitle:MYATextViewBold = findViewById(R.id.tv_title_filtered)
+            tvTitle.text = "Products for: " + mCreatorName
+        }
+
+        if (intent.hasExtra(Constants.EXTRA_PRODUCT_OWNER_ID)){
+            mProductOwner = intent.getStringExtra(Constants.EXTRA_PRODUCT_OWNER_ID)!!
+            getFilteredProducts(mProductOwner)
         }
     }
 
@@ -55,7 +68,10 @@ class FilteredProductsActivity : BaseActivity() {
         val tvEmptyFilter:MYATextView = findViewById(R.id.tv_no_items_found_for_filter)
         val tvTitle:MYATextViewBold = findViewById(R.id.tv_title_filtered)
 
-        tvTitle.text = mCategory
+//        if (mCategory!=null){
+//            tvTitle.text = mCategory
+//        }
+
 
         if (productsList.size > 0) {
 
@@ -75,7 +91,13 @@ class FilteredProductsActivity : BaseActivity() {
 
     private fun getFilteredProducts(category:String){
 
-        FirestoreClass().filterForCategory(this, category)
+        if (mProductOwner != null){
+            FirestoreClass().filterForProductUser(this, mProductOwner)
+        } else {
+            FirestoreClass().filterForCategory(this, category)
+        }
+
+
 //        showProgressDialog(resources.getString(R.string.please_wait))
 
     }
