@@ -91,7 +91,6 @@
         android:id="@+id/ty_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="259dp"
         android:layout_marginEnd="15dp"
         android:foreground="?attr/selectableItemBackground"
         android:padding="@dimen/clickable_text_view_padding"
@@ -99,7 +98,6 @@
         android:textColor="@color/black"
         android:textSize="@dimen/forgot_password_textSize"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_password" />
 
     <com.example.msikayaalimi.utils.MYAButton

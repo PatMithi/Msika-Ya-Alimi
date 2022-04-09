@@ -194,7 +194,7 @@
                         android:id="@+id/tv_transaction_fee_checkout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="MWK 500"
+                        android:text="MWK 400"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="@dimen/checkout_label_value_textSize" />
