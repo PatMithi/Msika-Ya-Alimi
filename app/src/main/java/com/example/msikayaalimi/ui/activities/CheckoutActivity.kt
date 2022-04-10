@@ -165,9 +165,8 @@ class CheckoutActivity : BaseActivity() {
 
     private fun payFlutter(){
 
-        val tvTotalAmount = 6000
         RaveUiManager(this)
-            .setAmount(mSubTotal.toDouble())
+            .setAmount(mSubTotal)
             .setCurrency("MWK")
             .setCountry("MW")
             .setfName(mUser.firstName)

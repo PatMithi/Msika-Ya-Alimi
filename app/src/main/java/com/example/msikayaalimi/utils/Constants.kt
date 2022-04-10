@@ -108,6 +108,9 @@ object Constants {
     const val EXTRA_PRODUCT_OWNER_ID:String = "extra_product_owner_id"
     const val EXTRA_SOLD_PRODUCTS_DETAILS:String = "extra_sold_products"
     const val EXTRA_CREATOR_NAME:String = "extra_creator_name"
+    const val QUESTIONS:String = "questions"
+    const val QUIZ_NAME = "quizName"
+    const val EXTRA_QUIZ_NAME:String = "extra_quiz_name"
 
 
 

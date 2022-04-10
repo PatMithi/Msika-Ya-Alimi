@@ -39,7 +39,9 @@ class QuizMenuAdapter (
         }
 
         holder.itemView.findViewById<ImageButton>(R.id.ib_quiz_menu_arrow).setOnClickListener {
-            context.startActivity(Intent(context, ViewQuizActivity::class.java))
+            val intent = Intent(context, ViewQuizActivity::class.java)
+            intent.putExtra(Constants.EXTRA_QUIZ_NAME, model.title)
+            context.startActivity(intent)
         }
     }
 

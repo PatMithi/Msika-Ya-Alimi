@@ -11,5 +11,5 @@ data class QuizQuestions(
     val answerTwo:String = "",
     val answerThree:String = "",
     val answerFour:String = "",
-    val correctAnswer:String = "",
-    val quizId:String = ""):Parcelable
+    val correctAnswer:Int = 0
+    ):Parcelable

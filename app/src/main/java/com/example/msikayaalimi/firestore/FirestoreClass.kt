@@ -1109,5 +1109,33 @@ class FirestoreClass {
             }
     }
 
+    fun getQuestions(activity:ViewQuizActivity, quizName:String) {
+        mFirestore.collection(Constants.QUESTIONS)
+            .whereEqualTo(Constants.QUIZ_NAME, quizName)
+            .get()
+            .addOnSuccessListener {
+                document ->
+
+                var questions:QuestionsAndAnswers? = null
+                for (i in document.documents) {
+                    val question = i.toObject(QuestionsAndAnswers::class.java)
+                    questions = question!!
+                }
+
+                activity.successfullyLoadedQuestions(questions!!)
+
+            }.addOnFailureListener {
+                    e ->
+                activity.hideProgressDialog()
+
+                Log.e(
+                    javaClass.simpleName,
+                    "Error while loading questions",
+                    e
+                )
+            }
+
+    }
+
 }
 

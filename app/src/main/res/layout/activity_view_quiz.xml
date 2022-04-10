@@ -107,6 +107,7 @@
                 android:layout_marginTop="10dp">
 
                 <com.example.msikayaalimi.utils.MYATextViewBold
+                    android:id="@+id/tv_question_quiz"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Question"
