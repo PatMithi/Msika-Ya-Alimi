@@ -385,7 +385,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         } else if (rbNuts.isChecked){
             Constants.NUTS
         } else if (rbOther.isChecked){
-            Constants.OTHER
+            Constants.OTHER_CATEGORY
         }else{
             Constants.VEGETABLES
         }

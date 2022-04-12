@@ -166,6 +166,10 @@ class RegisterActivity : BaseActivity() {
         // Hide progress dialog
         hideProgressDialog()
 
+        // Log user out and return to the welcome screen
+        FirebaseAuth.getInstance().signOut()
+        finish()
+
         Toast.makeText(
             this@RegisterActivity,
             resources.getString(R.string.register_success),

@@ -119,10 +119,10 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 //            startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
         }
         else if (user.profileCompleted == 1 && user.userType == "customer"){
-            startActivity(Intent(this@LoginActivity, MarketActivity::class.java))
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
         }
         else {
-            startActivity(Intent(this@LoginActivity, MarketActivity::class.java))
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
         }
         finish()
     }

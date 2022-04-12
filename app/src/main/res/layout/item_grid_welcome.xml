@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/product_item_delete_margin"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/iv_welcome_filter_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/market_item_image_height"
+        android:contentDescription="@string/content_description"
+        android:background="@color/ColorSecondary"
+        android:minHeight="@dimen/market_image_minHeight"
+        android:scaleType="fitXY" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_filter_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_welcome_filter_image"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/product_item_details_startEnd"
+        android:paddingTop="@dimen/product_item_delete_margin"
+        android:paddingEnd="@dimen/product_item_details_startEnd">
+
+        <com.example.msikayaalimi.utils.MYATextViewBold
+            android:id="@+id/tv_filter_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/product_item_details_top"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/product_item_title_textSize"
+            tools:text="Title" />
+
+
+    </LinearLayout>
+
+    <!--END-->
+</RelativeLayout>

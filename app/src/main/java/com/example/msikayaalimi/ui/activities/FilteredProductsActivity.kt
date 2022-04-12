@@ -15,8 +15,8 @@ import com.example.msikayaalimi.utils.MYATextViewBold
 
 class FilteredProductsActivity : BaseActivity() {
 
-    private lateinit var mCategory:String
-    private lateinit var mProductOwner:String
+    private var mCategory:String = ""
+    private var mProductOwner:String = ""
     private lateinit var mCreatorName:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +32,7 @@ class FilteredProductsActivity : BaseActivity() {
 
             tvTitle.text = mCategory
 
-            getFilteredProducts(mCategory)
+            getFilteredProducts(mCategory!!)
         }
 
         if (intent.hasExtra(Constants.EXTRA_CREATOR_NAME)){
@@ -91,7 +91,7 @@ class FilteredProductsActivity : BaseActivity() {
 
     private fun getFilteredProducts(category:String){
 
-        if (mProductOwner != null){
+        if (mProductOwner != ""){
             FirestoreClass().filterForProductUser(this, mProductOwner)
         } else {
             FirestoreClass().filterForCategory(this, category)

@@ -131,6 +131,29 @@ class FirestoreClass {
             }
     }
 
+    fun getWelcomeImages(activity:MainActivity){
+        mFirestore.collection(Constants.WELCOME_IMAGES)
+            .get()
+            .addOnSuccessListener { document ->
+
+                Log.i("Image list", document.documents.toString())
+                val images = ArrayList<Welcome>()
+
+                for (i in document.documents){
+
+                    val image = i.toObject(Welcome::class.java)
+                    images.add(image!!)
+                }
+
+            activity.successfullyLoadedWelcomeImages(images)
+
+            }.addOnFailureListener { e ->
+                activity.hideProgressDialog()
+                Log.e(javaClass.simpleName, "Error while loading welcome images", e)
+
+            }
+    }
+
     fun getUserDetailsUserType(fragment: Fragment) {
 
         // Here we pass the collection name from which we wants the data.
@@ -1136,6 +1159,7 @@ class FirestoreClass {
             }
 
     }
+
 
 }
 
