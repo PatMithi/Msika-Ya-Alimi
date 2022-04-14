@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.activities.QuizMenuActivity">
+    tools:context=".view.activities.QuizMenuActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/quiz_menu_activity_toolbar"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:backgroundTint="@color/burgundy">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/training_photo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

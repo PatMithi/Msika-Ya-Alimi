@@ -8,8 +8,8 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    android:background="@color/white"
-    tools:context=".ui.activities.SettingsActivity">
+    android:background="@color/ColorSecondary"
+    tools:context=".view.activities.SettingsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
 
-                <com.example.msikayaalimi.utils.MYATextViewBold
+                <com.example.msikayaalimi.controller.MYATextViewBold
                     android:id="@+id/tv_title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -36,8 +36,9 @@
                     android:text="@string/settings_title"
                     android:textColor="@color/white"
                     android:textSize="@dimen/toolbar_title_text_size"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </androidx.appcompat.widget.Toolbar>
+
         </FrameLayout>
 
         <FrameLayout
@@ -55,7 +56,7 @@
                 android:layout_margin="@dimen/user_photo_margin_settings"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_user_icon_image"
-                android:background="@color/ColorSecondary"/>
+                android:background="@color/white"/>
 
             <View
                 android:layout_width="match_parent"
@@ -63,14 +64,14 @@
                 />
         </FrameLayout>
 
-        <com.example.msikayaalimi.utils.MYATextView
+        <com.example.msikayaalimi.controller.MYATextView
             android:id="@+id/tv_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/fl_header_background"
             android:layout_alignParentEnd="true"
             android:layout_margin="16dp"
-            android:background="@color/ColorSecondary"
+            android:background="@color/white"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:paddingStart="@dimen/marginsStart_settings_edit_label"
             android:paddingTop="@dimen/marginsBottom_settings_edit_label"
@@ -80,67 +81,38 @@
             android:textColor="@color/black"
             android:textSize="@dimen/settings_edit_label_text_size"/>
 
-        <com.example.msikayaalimi.utils.MYATextView
+        <com.example.msikayaalimi.controller.MYATextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/fl_user_image"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/settings_name_marginTop"
+            android:layout_marginTop="20dp"
+            android:text="Patrick Mithi"
             android:textColor="@color/black"
-            android:textSize="@dimen/settings_name_textSize"
-            android:text="Patrick Mithi" />
+            android:textSize="@dimen/settings_name_textSize" />
 
-        <com.example.msikayaalimi.utils.MYATextView
-            android:id="@+id/tv_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_name"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/settings_information_marginTop"
-            android:textColor="@color/black"
-            android:textSize="@dimen/settings_infoAddress_textSize"
-            android:text="Male" />
 
-        <com.example.msikayaalimi.utils.MYATextView
-            android:id="@+id/tv_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_gender"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/settings_information_marginTop"
-            android:textColor="@color/black"
-            android:textSize="@dimen/settings_infoAddress_textSize"
-            android:text="abc@mail.com" />
-
-        <com.example.msikayaalimi.utils.MYATextView
-            android:id="@+id/tv_mobile_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_email"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/settings_information_marginTop"
-            android:textColor="@color/black"
-            android:textSize="@dimen/settings_infoAddress_textSize"
-            android:text="12343282" />
 
         <LinearLayout
             android:id="@+id/ll_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_mobile_number"
+            android:layout_below="@id/tv_name"
             android:layout_marginStart="@dimen/settings_address_marginPadding"
             android:layout_marginTop="@dimen/settings_address_marginPadding"
             android:layout_marginEnd="@dimen/settings_address_marginPadding"
-            android:layout_marginBottom="@dimen/settings_address_marginPadding"
-            android:background="@color/ColorSecondary"
+            android:background="@color/white"
             android:orientation="horizontal"
             android:padding="@dimen/settings_address_marginPadding">
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/settings_address_label_margin"
+                android:layout_marginStart="@dimen/settings_address_label_margin"
+                android:layout_marginTop="@dimen/settings_address_label_margin"
+                android:layout_marginEnd="@dimen/settings_address_label_margin"
+                android:layout_marginBottom="@dimen/settings_address_label_margin"
                 android:layout_weight="1"
                 android:text="@string/addresses_label"
                 android:textColor="@color/black"
@@ -152,13 +124,49 @@
                 android:contentDescription="@string/content_description"
                 android:src="@drawable/ic_vector_right_arrow" />
 
+
         </LinearLayout>
 
-        <com.example.msikayaalimi.utils.MYAButton
-            android:id="@+id/btn_logout"
+        <LinearLayout
+            android:id="@+id/ll_notifications"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ll_address"
+            android:layout_marginStart="@dimen/settings_address_marginPadding"
+            android:layout_marginEnd="@dimen/settings_address_marginPadding"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="@dimen/settings_address_marginPadding"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="@dimen/settings_address_marginPadding">
+
+            <com.example.msikayaalimi.controller.MYATextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/settings_address_label_margin"
+                android:layout_marginTop="@dimen/settings_address_label_margin"
+                android:layout_marginEnd="@dimen/settings_address_label_margin"
+                android:layout_marginBottom="@dimen/settings_address_label_margin"
+                android:layout_weight="1"
+                android:text="@string/notifications_label"
+                android:textColor="@color/black"
+                android:textSize="@dimen/settings_infoAddress_textSize" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/ic_vector_right_arrow" />
+
+        </LinearLayout>
+
+
+        <com.example.msikayaalimi.controller.MYAButton
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_notifications"
             android:labelFor="@id/ll_address"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/settings_btn_marginStartEnd"

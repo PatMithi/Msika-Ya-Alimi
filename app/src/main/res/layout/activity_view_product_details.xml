@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.ViewProductDetailsActivity"
+    tools:context=".view.activities.ViewProductDetailsActivity"
     android:background="@color/white">
     
     <androidx.appcompat.widget.Toolbar
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -61,7 +61,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_view_product_details_image">
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_product_details_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/label_text_view_textSize" />
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_product_details_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                     android:src="@drawable/ic_baseline_location_on_24"
                     android:tint="@color/black" />
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_product_details_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/label_text_view_textSize" />
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/products_specs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
                     android:textSize="@dimen/label_text_view_textSize" />
 
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_product_details_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/label_text_view_textSize" />
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_product_quantity_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
                     android:layout_toLeftOf="@id/tv_creator_name"
                     android:src="@drawable/ic_user_icon_image" />
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_creator_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
 
             </RelativeLayout>
 
-            <com.example.msikayaalimi.utils.MYAButton
+            <com.example.msikayaalimi.controller.MYAButton
                 android:id="@+id/btn_add_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -182,7 +182,7 @@
                 app:strokeWidth="4dp"
                 tools:visibility="visible"/>
 
-            <com.example.msikayaalimi.utils.MYAButton
+            <com.example.msikayaalimi.controller.MYAButton
                 android:id="@+id/btn_go_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -16,7 +16,7 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_address_full"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:textSize="@dimen/et_textSize"
             tools:text="Pat Mithi"/>
 
-        <com.example.msikayaalimi.utils.MYATextView
+        <com.example.msikayaalimi.controller.MYATextView
             android:id="@+id/tv_address_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
 
 
     </LinearLayout>
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/tv_address_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
         android:textColor="@color/black"
         android:text="BOX 30497"/>
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/tv_address_mobile_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

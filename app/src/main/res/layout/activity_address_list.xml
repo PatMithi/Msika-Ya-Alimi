@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.AddressListActivity"
+    tools:context=".view.activities.AddressListActivity"
     android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_title_address_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -30,7 +30,7 @@
             android:textStyle="bold"/>
     </androidx.appcompat.widget.Toolbar>
 
-    <com.example.msikayaalimi.utils.MYAButton
+    <com.example.msikayaalimi.controller.MYAButton
         android:id="@+id/btn_add_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_add_address" />
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/tv_no_addresses_yet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

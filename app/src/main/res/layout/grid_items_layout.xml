@@ -32,7 +32,7 @@
         android:paddingTop="@dimen/product_item_delete_margin"
         android:paddingEnd="@dimen/product_item_details_startEnd">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             tools:text="Title" />
 
 
-        <com.example.msikayaalimi.utils.MYATextView
+        <com.example.msikayaalimi.controller.MYATextView
             android:id="@+id/tv_item_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

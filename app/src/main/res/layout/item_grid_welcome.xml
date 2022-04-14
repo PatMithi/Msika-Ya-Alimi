@@ -31,7 +31,7 @@
         android:paddingTop="@dimen/product_item_delete_margin"
         android:paddingEnd="@dimen/product_item_details_startEnd">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_filter_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

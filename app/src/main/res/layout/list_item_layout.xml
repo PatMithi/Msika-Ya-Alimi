@@ -43,7 +43,7 @@
         app:layout_constraintStart_toEndOf="@id/ll_item_image"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
             android:textSize="@dimen/product_item_title_textSize"
             tools:text="Title" />
 
-        <com.example.msikayaalimi.utils.MYATextView
+        <com.example.msikayaalimi.controller.MYATextView
             android:id="@+id/tv_item_specification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             android:textStyle="bold"
             tools:text="250g" />
 
-        <com.example.msikayaalimi.utils.MYATextView
+        <com.example.msikayaalimi.controller.MYATextView
             android:id="@+id/tv_item_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

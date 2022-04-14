@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.MainActivity"
+    tools:context=".view.activities.MainActivity"
     android:background="@color/ColorSecondary">
 
     <ScrollView
@@ -18,16 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-
-
             <FrameLayout
                 android:id="@+id/fl_welcome_image_three"
                 android:layout_width="wrap_content"
                 android:layout_height="280dp"
-                android:layout_margin="30dp"
+                android:layout_marginBottom="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/iv_welcome_three"
@@ -37,7 +35,7 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_splash_background" />
 
-                <com.example.msikayaalimi.utils.MYAButton
+                <com.example.msikayaalimi.controller.MYAButton
                     android:id="@+id/btn_welcome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,7 +55,7 @@
                 android:id="@+id/rv_welcome_filters"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

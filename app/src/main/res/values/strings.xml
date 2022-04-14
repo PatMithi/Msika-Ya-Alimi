@@ -201,5 +201,6 @@
     <string name="title_sold_products">Sold Products</string>
     <string name="empty_sold_product">No Sold Products Yet!</string>
     <string name="title_sold_products_details">Sold Products Details</string>
+    <string name="notifications_label">Notifications</string>
 
 </resources>

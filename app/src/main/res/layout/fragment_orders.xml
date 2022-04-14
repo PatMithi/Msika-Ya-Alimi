@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ColorSecondary"
-    tools:context=".ui.fragments.OrdersFragment" >
+    tools:context=".view.fragments.OrdersFragment" >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_my_orders_items"
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="parent" />
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/tv_no_orders_yet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="parent" />
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/tv_no_sold_products_yet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

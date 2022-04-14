@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.ViewOrderDetails"
+    tools:context=".view.activities.ViewOrderDetails"
     android:background="@color/ColorSecondary">
 
     <androidx.appcompat.widget.Toolbar
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_order_details_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -78,7 +78,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:id="@+id/tv_view_order_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -101,7 +101,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp"/>
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:id="@+id/tv_view_order_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -123,7 +123,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp"/>
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:id="@+id/tv_view_order_status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -151,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -174,7 +174,7 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp">
 
-                <com.example.msikayaalimi.utils.MYATextViewBold
+                <com.example.msikayaalimi.controller.MYATextViewBold
                     android:id="@+id/tv_view_order_details_address_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -184,7 +184,7 @@
                     android:textSize="14sp"
                     android:text="Home" />
 
-                <com.example.msikayaalimi.utils.MYATextViewBold
+                <com.example.msikayaalimi.controller.MYATextViewBold
                     android:id="@+id/tv_order_full_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
                     android:textSize="18sp"
                     android:text="Pat Mithi"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_order_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -201,7 +201,7 @@
                     android:textSize="14sp"
                     android:text="XYW"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_my_order_details_additional_note"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -210,7 +210,7 @@
                     android:textSize="14sp"
                     tools:text="XYZ"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_my_order__other_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -219,7 +219,7 @@
                     android:textSize="14sp"
                     tools:text="XYZ"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_my_order_details_mobile_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -229,7 +229,7 @@
                     tools:text="0966445323"/>
             </LinearLayout>
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -254,7 +254,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -262,7 +262,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         />
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:id="@+id/tv_view_order_subtotal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -278,7 +278,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -286,7 +286,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp"/>
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:id="@+id/tv_order_details_total_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -301,7 +301,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -309,7 +309,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp"/>
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:id="@+id/tv_order_details_total_amount_end"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -332,7 +332,7 @@
                 android:paddingTop="2dp"
                 android:paddingBottom="2dp">
 
-                <com.example.msikayaalimi.utils.MYATextViewBold
+                <com.example.msikayaalimi.controller.MYATextViewBold
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"

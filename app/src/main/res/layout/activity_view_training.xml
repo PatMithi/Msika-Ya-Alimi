@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.activities.ViewTrainingActivity"
+    tools:context=".view.activities.ViewTrainingActivity"
     android:id="@+id/view_training_layout">
 
     <androidx.appcompat.widget.Toolbar
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/training_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -77,7 +77,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_empty_quiz_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 android:textColor="@color/black"
                 android:visibility="gone"/>
 
-            <com.example.msikayaalimi.utils.MYATextViewBold
+            <com.example.msikayaalimi.controller.MYATextViewBold
                 android:id="@+id/tv_view_training_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
                 android:layout_marginTop="@dimen/rv_address_list_marginTop"
                 android:textSize="@dimen/title_textSize"/>
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_view_training_introduction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
                     android:layout_height="match_parent" />
             </FrameLayout>
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_view_training_information"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
                 android:textSize="@dimen/et_textSize"
                 />
 
-            <com.example.msikayaalimi.utils.MYAButton
+            <com.example.msikayaalimi.controller.MYAButton
                 android:id="@+id/btn_start_quiz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

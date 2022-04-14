@@ -12,103 +12,103 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MsikaYaAlimi">
         <activity
-            android:name=".ui.activities.ViewSoldProductDetails"
+            android:name=".view.activities.ViewSoldProductDetails"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
-            android:name=".ui.activities.ViewOrderDetails"
+            android:name=".view.activities.ViewOrderDetails"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.CheckoutActivity"
+            android:name=".view.activities.CheckoutActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.ViewQuizActivity"
+            android:name=".view.activities.ViewQuizActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.FilteredProductsActivity"
+            android:name=".view.activities.FilteredProductsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.QuizMenuActivity"
+            android:name=".view.activities.QuizMenuActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.ViewTrainingActivity"
+            android:name=".view.activities.ViewTrainingActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.FilterActivity"
+            android:name=".view.activities.FilterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.SearchActivity"
+            android:name=".view.activities.SearchActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.UpdateAddressActivity"
+            android:name=".view.activities.UpdateAddressActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.AddressListActivity"
+            android:name=".view.activities.AddressListActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.MyCartActivity"
+            android:name=".view.activities.MyCartActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.ViewProductDetailsActivity"
+            android:name=".view.activities.ViewProductDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.AddProductActivity"
+            android:name=".view.activities.AddProductActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.SettingsActivity"
+            android:name=".view.activities.SettingsActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.MarketActivity"
+            android:name=".view.activities.MarketActivity"
             android:exported="true"
             android:label="@string/title_activity_market" />
         <activity
-            android:name=".ui.activities.ProfileActivity"
+            android:name=".view.activities.ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.ForgotPasswordActivity"
+            android:name=".view.activities.ForgotPasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.RegisterActivity"
+            android:name=".view.activities.RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.LoginActivity"
+            android:name=".view.activities.LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ui.activities.SplashActivity"
+            android:name=".view.activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -118,7 +118,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name=".view.activities.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.CheckoutActivity"
+    tools:context=".view.activities.CheckoutActivity"
     android:background="@color/ColorSecondary">
 
     <androidx.appcompat.widget.Toolbar
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_title_checkout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_cart_items"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_cart_items" />
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_chosen_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                 android:background="@color/white"
                 android:layout_below="@id/tv_chosen_address">
 
-                <com.example.msikayaalimi.utils.MYATextViewBold
+                <com.example.msikayaalimi.controller.MYATextViewBold
                     android:id="@+id/tv_address_full_checkout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                     android:textSize="@dimen/et_textSize"
                     tools:text="Pat Mithi"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_address_type_checkout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
 
             </LinearLayout>
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_address_details_checkout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/label_text_view_textSize" />
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_address_mobile_number_checkout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                 android:text="+265 989830030"
                 android:textColor="@color/black" />
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_order_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -167,7 +167,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/checkout_label_value_textSize" />
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:id="@+id/tv_subtotal_checkout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -182,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -190,7 +190,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/checkout_label_value_textSize" />
 
-                    <com.example.msikayaalimi.utils.MYATextView
+                    <com.example.msikayaalimi.controller.MYATextView
                         android:id="@+id/tv_transaction_fee_checkout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -205,7 +205,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.example.msikayaalimi.utils.MYATextViewBold
+                    <com.example.msikayaalimi.controller.MYATextViewBold
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -213,7 +213,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/checkout_label_value_textSize" />
 
-                    <com.example.msikayaalimi.utils.MYATextViewBold
+                    <com.example.msikayaalimi.controller.MYATextViewBold
                         android:id="@+id/tv_total_amount_checkout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -237,7 +237,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/til_mobile_number">
 
-                    <com.example.msikayaalimi.utils.MYARadioButton
+                    <com.example.msikayaalimi.controller.MYARadioButton
                         android:id="@+id/rb_mobile_money"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -251,7 +251,7 @@
                         android:textColor="@drawable/drawable_gender_tab_tet_color_selector"
                         android:textStyle="bold" />
 
-                    <com.example.msikayaalimi.utils.MYARadioButton
+                    <com.example.msikayaalimi.controller.MYARadioButton
                         android:id="@+id/rb_bank_transfer"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -266,7 +266,7 @@
                 </RadioGroup>
 
 
-                <com.example.msikayaalimi.utils.MYAButton
+                <com.example.msikayaalimi.controller.MYAButton
                     android:id="@+id/btn_pay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

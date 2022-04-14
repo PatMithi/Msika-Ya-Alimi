@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.FilteredProductsActivity"
+    tools:context=".view.activities.FilteredProductsActivity"
     android:background="@color/ColorSecondary">
 
     <androidx.appcompat.widget.Toolbar
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_title_filtered"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/tv_no_items_found_for_filter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

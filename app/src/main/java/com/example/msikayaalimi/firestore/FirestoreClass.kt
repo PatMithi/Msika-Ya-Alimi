@@ -5,26 +5,20 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
 import android.util.Log
-import androidx.core.content.contentValuesOf
 import androidx.fragment.app.Fragment
 import com.example.msikayaalimi.models.*
-import com.example.msikayaalimi.ui.activities.*
-import com.example.msikayaalimi.ui.adapters.TrainingMenuAdapter
-import com.example.msikayaalimi.ui.fragments.*
-import com.example.msikayaalimi.utils.Constants
+import com.example.msikayaalimi.view.activities.*
+import com.example.msikayaalimi.view.fragments.*
+import com.example.msikayaalimi.controller.Constants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlin.math.acos
-import kotlin.math.sign
 
 class FirestoreClass {
 
@@ -339,7 +333,7 @@ class FirestoreClass {
             }
     }
 
-    fun getMarketItems(fragment: DashboardFragment){
+    fun getMarketItems(fragment: MarketFragment){
         mFirestore.collection(Constants.PRODUCTS)
             .get()
             .addOnSuccessListener { document ->
@@ -360,7 +354,7 @@ class FirestoreClass {
                 }
 
                 when(fragment){
-                    is DashboardFragment -> {
+                    is MarketFragment -> {
                         GlobalScope.launch(Dispatchers.Main) {
                             fragment.marketItemsSuccessfullyLoaded(listOfProducts)
                         }
@@ -898,7 +892,8 @@ class FirestoreClass {
                     val product = i.toObject(Product::class.java)
                     product!!.product_id = i.id
 
-                    if (word in product.productTitle || word in product.productTitle.toLowerCase()){
+                    if (word in product.productTitle || word in product.productTitle.toLowerCase()
+                        || word.toLowerCase() in product.productTitle.toLowerCase()){
                         productsList.add(product)
                     }
 

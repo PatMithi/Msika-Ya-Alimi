@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.activities.LoginActivity">
+    tools:context=".view.activities.LoginActivity">
 
     <FrameLayout
         android:id="@+id/fl_header_image"
@@ -25,7 +25,7 @@
 
     </FrameLayout>
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/ty_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ty_title">
 
-        <com.example.msikayaalimi.utils.MYAEditText
+        <com.example.msikayaalimi.controller.MYAEditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_email">
 
-        <com.example.msikayaalimi.utils.MYAEditText
+        <com.example.msikayaalimi.controller.MYAEditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             tools:text="123456"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/ty_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_password" />
 
-    <com.example.msikayaalimi.utils.MYAButton
+    <com.example.msikayaalimi.controller.MYAButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
 
     </LinearLayout>
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/ty_no_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
-    <com.example.msikayaalimi.utils.MYATextViewBold
+    <com.example.msikayaalimi.controller.MYATextViewBold
         android:id="@+id/ty_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

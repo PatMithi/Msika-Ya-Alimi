@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ColorSecondary"
-    tools:context=".ui.fragments.ProductsFragment">
+    tools:context=".view.fragments.ProductsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_my_products"
@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:visibility="visible"/>
 
-    <com.example.msikayaalimi.utils.MYATextView
+    <com.example.msikayaalimi.controller.MYATextView
         android:id="@+id/tv_no_products_yet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

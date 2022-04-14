@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.UpdateAddressActivity"
+    tools:context=".view.activities.UpdateAddressActivity"
     android:background="@color/white">
 
     <androidx.appcompat.widget.Toolbar
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_add_address_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -55,7 +55,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.example.msikayaalimi.utils.MYAEditText
+                <com.example.msikayaalimi.controller.MYAEditText
                     android:id="@+id/et_full_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_full_name">
 
-                <com.example.msikayaalimi.utils.MYAEditText
+                <com.example.msikayaalimi.controller.MYAEditText
                     android:id="@+id/et_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_address">
 
-                <com.example.msikayaalimi.utils.MYAEditText
+                <com.example.msikayaalimi.controller.MYAEditText
                     android:id="@+id/et_district"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_district">
 
-                <com.example.msikayaalimi.utils.MYAEditText
+                <com.example.msikayaalimi.controller.MYAEditText
                     android:id="@+id/et_additional_notes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_additional_notes">
 
-                <com.example.msikayaalimi.utils.MYAEditText
+                <com.example.msikayaalimi.controller.MYAEditText
                     android:id="@+id/et_phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_phone_number">
 
-                <com.example.msikayaalimi.utils.MYARadioButton
+                <com.example.msikayaalimi.controller.MYARadioButton
                     android:id="@+id/rb_home"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -189,7 +189,7 @@
                     android:textColor="@drawable/drawable_gender_tab_tet_color_selector"
                     android:textStyle="bold" />
 
-                <com.example.msikayaalimi.utils.MYARadioButton
+                <com.example.msikayaalimi.controller.MYARadioButton
                     android:id="@+id/rb_office"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -201,7 +201,7 @@
                     android:text="@string/label_office"
                     android:textColor="@drawable/drawable_gender_tab_tet_color_selector"
                     android:textStyle="bold" />
-                <com.example.msikayaalimi.utils.MYARadioButton
+                <com.example.msikayaalimi.controller.MYARadioButton
                     android:id="@+id/rb_other"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -216,7 +216,7 @@
             </RadioGroup>
 
 
-            <com.example.msikayaalimi.utils.MYAButton
+            <com.example.msikayaalimi.controller.MYAButton
                 android:id="@+id/btn_add_new_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -29,7 +29,7 @@
             android:layout_height="match_parent" />
     </FrameLayout>
 
-    <com.example.msikayaalimi.utils.MYATextViewBold
+    <com.example.msikayaalimi.controller.MYATextViewBold
         android:id="@+id/tv_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
         android:layout_marginTop="@dimen/rv_address_list_marginTop"
         android:textSize="@dimen/title_textSize"/>
 
-    <com.example.msikayaalimi.utils.MYAButton
+    <com.example.msikayaalimi.controller.MYAButton
         android:id="@+id/btn_answer_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_question"/>
 
-    <com.example.msikayaalimi.utils.MYAButton
+    <com.example.msikayaalimi.controller.MYAButton
         android:id="@+id/btn_answer_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_answer_one"/>
 
-    <com.example.msikayaalimi.utils.MYAButton
+    <com.example.msikayaalimi.controller.MYAButton
         android:id="@+id/btn_answer_three"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_answer_two"/>
 
-    <com.example.msikayaalimi.utils.MYAButton
+    <com.example.msikayaalimi.controller.MYAButton
         android:id="@+id/btn_answer_four"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

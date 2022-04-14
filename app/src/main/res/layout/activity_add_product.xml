@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.activities.AddProductActivity">
+    tools:context=".view.activities.AddProductActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/add_product_activity_toolbar"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_add_products_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -92,7 +92,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/add_product_image">
 
-                    <com.example.msikayaalimi.utils.MYAEditText
+                    <com.example.msikayaalimi.controller.MYAEditText
                         android:id="@+id/et_product_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/til_product_title">
 
-                    <com.example.msikayaalimi.utils.MYAEditText
+                    <com.example.msikayaalimi.controller.MYAEditText
                         android:id="@+id/et_product_price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/til_product_price">
 
-                    <com.example.msikayaalimi.utils.MYAEditText
+                    <com.example.msikayaalimi.controller.MYAEditText
                         android:id="@+id/et_product_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/til_product_description">
 
-                    <com.example.msikayaalimi.utils.MYAEditText
+                    <com.example.msikayaalimi.controller.MYAEditText
                         android:id="@+id/et_product_specification"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -188,7 +188,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/til_product_specification">
 
-                    <com.example.msikayaalimi.utils.MYAEditText
+                    <com.example.msikayaalimi.controller.MYAEditText
                         android:id="@+id/et_product_location"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -212,7 +212,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/til_product_location">
 
-                    <com.example.msikayaalimi.utils.MYAEditText
+                    <com.example.msikayaalimi.controller.MYAEditText
                         android:id="@+id/et_product_quantity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
                         android:textSize="@dimen/et_textSize" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_product_category"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -255,7 +255,7 @@
                         android:layout_marginEnd="16dp"
                         >
 
-                        <com.example.msikayaalimi.utils.MYARadioButton
+                        <com.example.msikayaalimi.controller.MYARadioButton
                             android:id="@+id/rb_animals"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -270,7 +270,7 @@
                             android:textColor="@drawable/drawable_gender_tab_tet_color_selector"
                             android:textStyle="bold" />
 
-                        <com.example.msikayaalimi.utils.MYARadioButton
+                        <com.example.msikayaalimi.controller.MYARadioButton
                             android:id="@+id/rb_fruits"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -285,7 +285,7 @@
                             android:textStyle="bold"
                             android:layout_alignRight="@+id/rb_animals"/>
 
-                        <com.example.msikayaalimi.utils.MYARadioButton
+                        <com.example.msikayaalimi.controller.MYARadioButton
                             android:id="@+id/rb_vegetables"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -301,7 +301,7 @@
 
 
 
-                        <com.example.msikayaalimi.utils.MYARadioButton
+                        <com.example.msikayaalimi.controller.MYARadioButton
                             android:id="@+id/rb_nuts"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -316,7 +316,7 @@
                             android:textStyle="bold"
                             android:layout_below="@id/rb_animals"/>
 
-                        <com.example.msikayaalimi.utils.MYARadioButton
+                        <com.example.msikayaalimi.controller.MYARadioButton
                             android:id="@+id/rb_eggs_and_dairy"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -329,7 +329,7 @@
                             android:text="@string/label_eggs_and_dairy"
                             android:textColor="@drawable/drawable_gender_tab_tet_color_selector"
                             android:textStyle="bold" />
-                        <com.example.msikayaalimi.utils.MYARadioButton
+                        <com.example.msikayaalimi.controller.MYARadioButton
                             android:id="@+id/rb_other_category"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -346,7 +346,7 @@
                 </RelativeLayout>
 
 
-                <com.example.msikayaalimi.utils.MYAButton
+                <com.example.msikayaalimi.controller.MYAButton
                     android:id="@+id/btn_submit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

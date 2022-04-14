@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ColorSecondary"
-    tools:context=".ui.fragments.TrainingFragment"
+    tools:context=".view.fragments.TrainingFragment"
     android:id="@+id/training_menu_layout">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_sort_by_name_ascending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_sort_by_name_descending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_sort_by_price_ascending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.example.msikayaalimi.utils.MYATextView
+            <com.example.msikayaalimi.controller.MYATextView
                 android:id="@+id/tv_sort_by_price_descending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

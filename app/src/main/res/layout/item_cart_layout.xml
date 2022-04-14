@@ -38,7 +38,7 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <com.example.msikayaalimi.utils.MYATextView
+        <com.example.msikayaalimi.controller.MYATextView
             android:id="@+id/tv_cart_item_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.example.msikayaalimi.utils.MYATextViewBold
+            <com.example.msikayaalimi.controller.MYATextViewBold
                 android:id="@+id/tv_cart_item_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
                     android:padding="@dimen/ib_cart_item_padding"
                     android:src="@drawable/ic_vector_remove" />
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_cart_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

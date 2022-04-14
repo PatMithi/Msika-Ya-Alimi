@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.activities.ViewQuizActivity">
+    tools:context=".view.activities.ViewQuizActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/view_quiz_activity_toolbar"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.example.msikayaalimi.utils.MYATextViewBold
+        <com.example.msikayaalimi.controller.MYATextViewBold
             android:id="@+id/tv_view_quiz_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -88,7 +88,7 @@
                     android:progress="0"
                     android:max="10"
                     />
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -106,7 +106,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/ll_quiz_progressbar"
                 android:layout_marginTop="10dp">
 
-                <com.example.msikayaalimi.utils.MYATextViewBold
+                <com.example.msikayaalimi.controller.MYATextViewBold
                     android:id="@+id/tv_question_quiz"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -115,7 +115,7 @@
                     android:textColor="@color/black"
                     android:padding="10dp"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_answer_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                     android:gravity="center"
                     android:text="Answer"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_answer_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                     android:gravity="center"
                     android:text="Answer"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_answer_three"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
                     android:gravity="center"
                     android:text="Answer"/>
 
-                <com.example.msikayaalimi.utils.MYATextView
+                <com.example.msikayaalimi.controller.MYATextView
                     android:id="@+id/tv_answer_four"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
 
             </LinearLayout>
             
-            <com.example.msikayaalimi.utils.MYAButton
+            <com.example.msikayaalimi.controller.MYAButton
                 android:id="@+id/btn_submit_answer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
