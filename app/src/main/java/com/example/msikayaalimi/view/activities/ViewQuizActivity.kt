@@ -2,6 +2,7 @@ package com.example.msikayaalimi.view.activities
 
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.ProgressBar
 import androidx.appcompat.widget.Toolbar
 import com.example.msikayaalimi.Firestore.FirestoreClass
 import com.example.msikayaalimi.R
@@ -12,7 +13,7 @@ import com.example.msikayaalimi.controller.*
 class ViewQuizActivity : BaseActivity() {
 
     private var mCurrentPosition: Int = 1
-    private var mQuestionsList:ArrayList<QuizQuestions>? = null
+    private var mQuestionsList:QuestionsAndAnswers? = null
     private var mSelectedAnswer:Int = 0
     private lateinit var mQuiz:String
 
@@ -60,10 +61,17 @@ class ViewQuizActivity : BaseActivity() {
         val tvAnswerThree:MYATextView = findViewById(R.id.tv_answer_three)
         val tvAnswerFour:MYATextView = findViewById(R.id.tv_answer_four)
         val ivQuestionImage:ImageView = findViewById(R.id.iv_quiz_photo)
+        val pbQuestion:ProgressBar = findViewById(R.id.pb_question)
+        val tvQuestionNumber:MYATextView = findViewById(R.id.tv_question_number)
 
-        val quizQuestions = questions
+        var currentQue = 1
 
-        val question = questions.questions[0]
+        mQuestionsList = questions
+
+        val question = mQuestionsList!!.questions[currentQue - 1]
+
+        pbQuestion.progress = currentQue
+        tvQuestionNumber.text = currentQue.toString() + "/" + pbQuestion.max
 
         GlideLoader(this).loadProductImage(question.image, ivQuestionImage)
         tvQuestion.text = question.question

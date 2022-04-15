@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.msikayaalimi.Firestore.FirestoreClass
@@ -47,13 +50,28 @@ class OrdersFragment : BaseFragment() {
     mUser = user
     val tvEmptyOrders:MYATextView = binding.findViewById(R.id.tv_no_orders_yet)
     val tvEmptySoldProducts:MYATextView = binding.findViewById(R.id.tv_no_sold_products_yet)
+    val rgOrders:RadioGroup = binding.findViewById(R.id.rg_orders_sold)
+    val rbSold:RadioButton = binding.findViewById(R.id.rb_sold_products)
+    val rbOrders:RadioButton = binding.findViewById(R.id.rb_orders)
+    val rvMyOrders:RecyclerView = binding.findViewById(R.id.rv_my_orders_items)
+    val rvSoldProductsItems:RecyclerView = binding.findViewById(R.id.rv_my_sold_products_items)
 
-    if (user.userType == Constants.CUSTOMER){
+
+    if (user.userType == Constants.CUSTOMER ){
       getMyOrders()
+      rgOrders.visibility = View.GONE
     } else {
-      tvEmptyOrders.visibility = View.GONE
-      tvEmptySoldProducts.visibility = View.VISIBLE
-      getSoldProducts()
+      rgOrders.visibility = View.VISIBLE
+      rbOrders.setOnClickListener {
+        rvSoldProductsItems.visibility = View.GONE
+        getMyOrders()
+        tvEmptySoldProducts.visibility = View.GONE
+      }
+      rbSold.setOnClickListener {
+        rvSoldProductsItems.visibility = View.VISIBLE
+        tvEmptyOrders.visibility = View.GONE
+        getSoldProducts()
+      }
     }
   }
 

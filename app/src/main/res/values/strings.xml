@@ -202,5 +202,7 @@
     <string name="empty_sold_product">No Sold Products Yet!</string>
     <string name="title_sold_products_details">Sold Products Details</string>
     <string name="notifications_label">Notifications</string>
+    <string name="btn_orders_label">Orders</string>
+    <string name="btn_sold_products_label">Sold Products</string>
 
 </resources>
