@@ -12,10 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MsikaYaAlimi">
         <activity
+            android:name=".view.activities.QuizResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
+        <activity
             android:name=".view.activities.ViewSoldProductDetails"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".view.activities.ViewOrderDetails"
             android:exported="false"
@@ -43,11 +49,6 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".view.activities.ViewTrainingActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
-            android:name=".view.activities.FilterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

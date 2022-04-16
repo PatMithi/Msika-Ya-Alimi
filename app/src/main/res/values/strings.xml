@@ -205,4 +205,8 @@
     <string name="btn_orders_label">Orders</string>
     <string name="btn_sold_products_label">Sold Products</string>
 
+    // View Quiz Activity
+    <string name="btn_finish_label">Finish</string>
+    <string name="btn_next_question">Next</string>
+
 </resources>
