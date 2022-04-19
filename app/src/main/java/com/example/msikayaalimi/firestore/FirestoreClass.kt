@@ -148,6 +148,29 @@ class FirestoreClass {
             }
     }
 
+    fun getSlideshowImage(activity: MainActivity){
+        mFirestore.collection(Constants.WELCOME_SLIDESHOW)
+            .get()
+            .addOnSuccessListener { document ->
+
+                Log.i("Slide Image list", document.documents.toString())
+                val images = ArrayList<WelcomeSlideshow>()
+
+                for (i in document.documents){
+
+                    val image = i.toObject(WelcomeSlideshow::class.java)
+                    images.add(image!!)
+                }
+
+                activity.successfullyLoadedSlideshow(images[0])
+            }.addOnFailureListener { e ->
+
+                activity.hideProgressDialog()
+                Log.e(javaClass.simpleName, "Error while loading slide images", e)
+
+            }
+    }
+
     fun getUserDetailsUserType(fragment: Fragment) {
 
         // Here we pass the collection name from which we wants the data.

@@ -17,6 +17,8 @@
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/drawable/ic_orders.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/drawable/ic_orders_bag.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/drawable/ic_quiz.xml" value="0.4" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/drawable/ic_quiz_result.xml" value="0.1734375" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/drawable/ic_tag.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/drawable/ic_training.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/drawable/ic_vector_add.xml" value="0.26614583333333336" />
@@ -34,11 +36,12 @@
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_filtered_products.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_market.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_my_cart.xml" value="0.2" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_profile.xml" value="0.4" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_quiz_menu.xml" value="0.16" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_quiz_result.xml" value="0.264" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_search.xml" value="0.2" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_settings.xml" value="0.2" />

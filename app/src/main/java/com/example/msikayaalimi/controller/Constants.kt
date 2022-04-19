@@ -19,6 +19,7 @@ object Constants {
     const val TRAINING_INFO:String = "training_info"
     const val TRAINING_MENU_ITEMS:String = "training_menu_items"
     const val WELCOME_IMAGES:String = "welcome_images"
+    const val WELCOME_SLIDESHOW:String = "welcome_slideshow"
 
 
     // Constants for uploading and accessing user profile data from the Cloud database
@@ -114,6 +115,8 @@ object Constants {
     const val EXTRA_QUIZ_NAME:String = "extra_quiz_name"
     const val WELCOME_IMAGE:String = "welcome_image"
     const val FILTER_IMAGE:String = "filter_image"
+    const val EXTRA_QUIZ_RESULT:String = "quiz_result"
+    const val EXTRA_TOTAL_QUIZ_QUESTIONS:String = "extra_total_quiz_questions"
 
 
 

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.msikayaalimi.view.fragments.MarketFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_market"
         tools:layout="@layout/fragment_products" />
 
     <fragment

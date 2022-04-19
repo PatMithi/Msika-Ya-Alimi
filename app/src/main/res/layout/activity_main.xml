@@ -18,38 +18,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <FrameLayout
-                android:id="@+id/fl_welcome_image_three"
-                android:layout_width="wrap_content"
-                android:layout_height="280dp"
-                android:layout_marginBottom="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/sv_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:queryHint="@string/title_search"
+                android:backgroundTint="@color/ColorPrimary"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/ColorSecondary"
+                android:visibility="visible"
+                tools:visibility="visible"
+                />
 
-                <ImageView
-                    android:id="@+id/iv_welcome_three"
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/is_welcome"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/content_description"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_splash_background" />
+                    android:layout_height="300dp"
+                    app:iss_auto_cycle="true"
+                    app:iss_delay="100"
+                    app:iss_placeholder="@color/ColorSecondary"
+                    app:iss_error_image="@color/ColorSecondary"
+                    app:iss_corner_radius="5"
+                    app:iss_selected_dot="@drawable/default_selected_dot"
+                    app:iss_unselected_dot="@drawable/default_unselected_dot"
+                    app:iss_period="1000"
+                    tools:ignore="MissingConstraints"
+                    app:layout_constraintTop_toBottomOf="@+id/sv_welcome"/>
 
-                <com.example.msikayaalimi.controller.MYAButton
-                    android:id="@+id/btn_welcome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#A3FFFFFF"
-                    android:text="Proceed to Marketplace"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
-
-
-            </FrameLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_welcome_filters"
@@ -59,7 +56,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fl_welcome_image_three" />
+                app:layout_constraintTop_toBottomOf="@+id/is_welcome" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

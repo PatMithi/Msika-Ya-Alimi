@@ -1,5 +1,6 @@
 package com.example.msikayaalimi.view.activities
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -156,6 +157,10 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
                         } else ->{
                             Toast.makeText(this, "Completed!",
                             Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, QuizResultActivity::class.java)
+                            intent.putExtra(Constants.EXTRA_QUIZ_RESULT, mCorrectAnswers.toString())
+                            intent.putExtra(Constants.EXTRA_TOTAL_QUIZ_QUESTIONS, mQuestionsList!!.size.toString())
+                            startActivity(intent)
                         }
                     }
                 } else {

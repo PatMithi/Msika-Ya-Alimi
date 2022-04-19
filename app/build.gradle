@@ -96,6 +96,9 @@ dependencies {
     // add flutter wave dependencies
     implementation 'com.github.flutterwave.rave-android:rave_android:2.1.38'
 
+    //ImageSlide
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+
 //    // Africa is talking API
 //    implementation("com.github.AfricasTalkingLtd.africastalking-java:core:3.4.8")
 
