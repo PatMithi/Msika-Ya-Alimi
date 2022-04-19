@@ -47,6 +47,26 @@
                     tools:ignore="MissingConstraints"
                     app:layout_constraintTop_toBottomOf="@+id/sv_welcome"/>
 
+            <com.example.msikayaalimi.controller.MYAButton
+                android:id="@+id/btn_launch_market"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/button_background"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingTop="@dimen/btn_padding"
+                android:paddingBottom="@dimen/btn_padding"
+                android:text="@string/btn_label_launch_market"
+                android:textColor="@color/ColorPrimary"
+                android:textSize="@dimen/btn_textSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/is_welcome"/>
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_welcome_filters"
@@ -56,7 +76,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/is_welcome" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_launch_market" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

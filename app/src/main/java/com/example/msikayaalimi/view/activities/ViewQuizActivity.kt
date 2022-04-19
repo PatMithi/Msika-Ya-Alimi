@@ -101,7 +101,7 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
         val question = mQuestionsList!![mCurrentPosition - 1]
 
         pbQuestion.progress = mCurrentPosition
-        tvQuestionNumber.text = mCurrentPosition.toString() + "/" + pbQuestion.max
+        tvQuestionNumber.text = mCurrentPosition.toString() + "/" + mQuestionsList!!.size
 
         if (mCurrentPosition == mQuestionsList!!.size){
             btnSubmit.text = resources.getString(R.string.btn_finish_label)

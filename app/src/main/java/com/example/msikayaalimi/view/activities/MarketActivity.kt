@@ -1,6 +1,7 @@
 package com.example.msikayaalimi.view.activities
 
 import android.os.Bundle
+import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -13,6 +14,7 @@ import com.example.msikayaalimi.R
 import com.example.msikayaalimi.models.User
 import com.example.msikayaalimi.view.fragments.ProductsFragment
 import com.example.msikayaalimi.controller.Constants
+import com.example.msikayaalimi.view.fragments.TrainingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 
 class MarketActivity : BaseActivity() {
@@ -75,7 +77,7 @@ class MarketActivity : BaseActivity() {
     }
 
 
-    fun getUserDetails() {
+    private fun getUserDetails() {
         FirestoreClass().getUserDetails(this@MarketActivity)
         showProgressDialog(resources.getString(R.string.please_wait))
     }

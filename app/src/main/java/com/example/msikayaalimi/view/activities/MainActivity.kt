@@ -50,6 +50,11 @@ class MainActivity : BaseActivity() {
             })
         )
 
+        val btnLaunch:MYAButton = findViewById(R.id.btn_launch_market)
+        btnLaunch.setOnClickListener {
+            startActivity(Intent(this@MainActivity, MarketActivity::class.java))
+        }
+
     }
 
     override fun onResume() {
@@ -112,8 +117,9 @@ class MainActivity : BaseActivity() {
         val image3 = mSlideShowImages[2]
 
         imageList.add(SlideModel(image1, "Welcome"))
-        imageList.add(SlideModel(image2, "Go to Market"))
-        imageList.add(SlideModel(image3, "About"))
+        imageList.add(SlideModel(image2, "Shop best Deals!"))
+        imageList.add(SlideModel(image3, "Msika Ya Alimi! \nUniting farmers and" +
+                "customers at the palm of your hand"))
 
         val isWelcome:ImageSlider = findViewById(R.id.is_welcome)
         isWelcome.setImageList(imageList, ScaleTypes.FIT)

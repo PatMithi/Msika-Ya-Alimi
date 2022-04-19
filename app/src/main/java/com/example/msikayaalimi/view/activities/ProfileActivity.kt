@@ -193,7 +193,8 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
             Toast.LENGTH_SHORT
         ).show()
 
-        startActivity(Intent(this@ProfileActivity, MarketActivity::class.java))
+
+        startActivity(Intent(this@ProfileActivity, MainActivity::class.java))
         finish()
     }
 

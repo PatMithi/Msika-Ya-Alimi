@@ -210,5 +210,6 @@
     <string name="btn_next_question">Next</string>
     <string name="label_congratulations">Congratulations! You have completed the quiz.</string>
     <string name="title_market">Market</string>
+    <string name="btn_label_launch_market">Launch Marketplace</string>
 
 </resources>

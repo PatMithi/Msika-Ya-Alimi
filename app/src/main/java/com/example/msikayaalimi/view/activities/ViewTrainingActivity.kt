@@ -1,5 +1,6 @@
 package com.example.msikayaalimi.view.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -33,6 +34,14 @@ class ViewTrainingActivity : BaseActivity() {
         }
 
         getMenuItemDetails()
+
+        val btnTakeQuiz:MYAButton = findViewById(R.id.btn_start_quiz)
+
+        btnTakeQuiz.setOnClickListener {
+            val intent = Intent(this, ViewQuizActivity::class.java)
+            intent.putExtra(Constants.EXTRA_QUIZ_NAME, "Crop Rotation")
+            startActivity(intent)
+        }
 
 
     }
