@@ -815,6 +815,42 @@ class FirestoreClass {
             }
     }
 
+    fun filterForLocation(activity: Activity, location:String){
+        mFirestore.collection(Constants.PRODUCTS)
+            .whereEqualTo(Constants.PRODUCT_LOCATION, location)
+            .get()
+            .addOnSuccessListener { document ->
+
+                Log.i("Products List", document.documents.toString())
+                val productsList: ArrayList<Product> = ArrayList()
+
+                for (i in document.documents) {
+
+                    val product = i.toObject(Product::class.java)
+                    product!!.product_id = i.id
+
+                    productsList.add(product)
+
+                    when (activity){
+                        is FilteredProductsActivity->{
+
+                            activity.successfullyFilteredProducts(productsList)
+                        }
+                    }
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e(activity.javaClass.simpleName, "Error while filtering items", e)
+
+                when (activity){
+                    is FilteredProductsActivity ->{
+                        activity.hideProgressDialog()
+                    }
+                }
+
+            }
+    }
+
     fun getAddressesList(activity:AddressListActivity){
         mFirestore.collection(Constants.ADDRESSES)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())

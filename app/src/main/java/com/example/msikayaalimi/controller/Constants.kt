@@ -117,6 +117,8 @@ object Constants {
     const val FILTER_IMAGE:String = "filter_image"
     const val EXTRA_QUIZ_RESULT:String = "quiz_result"
     const val EXTRA_TOTAL_QUIZ_QUESTIONS:String = "extra_total_quiz_questions"
+    const val EXTRA_LOCATION:String = "extra_location"
+    const val PRODUCT_LOCATION:String = "productLocation"
 
 
 

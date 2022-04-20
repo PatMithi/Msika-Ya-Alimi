@@ -17,6 +17,7 @@ class FilteredProductsActivity : BaseActivity() {
 
     private var mCategory:String = ""
     private var mProductOwner:String = ""
+    private var mLocation:String = ""
     private lateinit var mCreatorName:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,11 +26,10 @@ class FilteredProductsActivity : BaseActivity() {
 
         setupActionBar()
 
+        val tvTitle:MYATextViewBold = findViewById(R.id.tv_title_filtered)
+
         if (intent.hasExtra(Constants.EXTRA_FILTERED_ITEMS)){
             mCategory = intent.getStringExtra(Constants.EXTRA_FILTERED_ITEMS)!!
-
-            val tvTitle:MYATextViewBold = findViewById(R.id.tv_title_filtered)
-
             tvTitle.text = mCategory
 
             getFilteredProducts(mCategory!!)
@@ -37,13 +37,20 @@ class FilteredProductsActivity : BaseActivity() {
 
         if (intent.hasExtra(Constants.EXTRA_CREATOR_NAME)){
             mCreatorName = intent.getStringExtra(Constants.EXTRA_CREATOR_NAME)!!
-            val tvTitle:MYATextViewBold = findViewById(R.id.tv_title_filtered)
+
             tvTitle.text = "Products for: " + mCreatorName
         }
 
         if (intent.hasExtra(Constants.EXTRA_PRODUCT_OWNER_ID)){
             mProductOwner = intent.getStringExtra(Constants.EXTRA_PRODUCT_OWNER_ID)!!
             getFilteredProducts(mProductOwner)
+        }
+
+        if (intent.hasExtra(Constants.EXTRA_LOCATION)){
+            mLocation = intent.getStringExtra(Constants.EXTRA_LOCATION)!!
+            tvTitle.text = "Products in " + mLocation
+            getFilteredProducts(mLocation)
+
         }
     }
 
@@ -93,7 +100,10 @@ class FilteredProductsActivity : BaseActivity() {
 
         if (mProductOwner != ""){
             FirestoreClass().filterForProductUser(this, mProductOwner)
-        } else {
+        } else if (mLocation!=""){
+            FirestoreClass().filterForLocation(this, category)
+        }
+        else {
             FirestoreClass().filterForCategory(this, category)
         }
 

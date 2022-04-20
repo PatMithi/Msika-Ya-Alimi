@@ -47,9 +47,11 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
         val addToCartButton:MYAButton = findViewById(R.id.btn_add_to_cart)
         val btnGoToCart:MYAButton = findViewById(R.id.btn_go_to_cart)
         val tvCreator:MYATextView = findViewById(R.id.tv_creator_name)
+        val tvLocation:MYATextView = findViewById(R.id.tv_product_details_location)
         addToCartButton.setOnClickListener(this)
         btnGoToCart.setOnClickListener(this)
         tvCreator.setOnClickListener(this)
+        tvLocation.setOnClickListener(this)
     }
 
     // adding back button to the activity
@@ -237,6 +239,12 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
                     val intent = Intent(this, FilteredProductsActivity::class.java)
                     intent.putExtra(Constants.EXTRA_PRODUCT_OWNER_ID, mProductDetails.user_id)
                     intent.putExtra(Constants.EXTRA_CREATOR_NAME, mCreatorName)
+                    startActivity(intent)
+                }
+
+                R.id.tv_product_details_location ->{
+                    val intent = Intent(this, FilteredProductsActivity::class.java)
+                    intent.putExtra(Constants.EXTRA_LOCATION, mProductDetails.productLocation)
                     startActivity(intent)
                 }
 
