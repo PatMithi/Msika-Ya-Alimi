@@ -15,6 +15,7 @@ import com.example.msikayaalimi.view.activities.SearchActivity
 import com.example.msikayaalimi.view.adapters.TrainingMenuAdapter
 import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYATextView
+import com.facebook.shimmer.ShimmerFrameLayout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -47,16 +48,16 @@ open class TrainingFragment : BaseFragment() {
 
     private suspend fun getMenuItems() {
         FirestoreClass().getMenuItems(this, Constants.TRAINING_ITEM)
-        showProgressDialog(resources.getString(R.string.please_wait))
+        binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_training).startShimmerAnimation()
     }
 
     private suspend fun getUserDetails() {
         FirestoreClass().getUserDetailsUserType(this@TrainingFragment)
-        showProgressDialog(resources.getString(R.string.please_wait))
+//        showProgressDialog(resources.getString(R.string.please_wait))
     }
 
     suspend fun successfullyLoadedUserDetails(user: User) {
-        hideProgressDialog()
+//        hideProgressDialog()
         mUser = user
 
         if (mUser.userType == Constants.CUSTOMER) {
@@ -110,6 +111,8 @@ open class TrainingFragment : BaseFragment() {
 
         }else{
 
+            binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_training).visibility = View.VISIBLE
+
             GlobalScope.launch(Dispatchers.Main) {
                 getMenuItems()
             }
@@ -119,7 +122,7 @@ open class TrainingFragment : BaseFragment() {
 
     suspend fun successfullyLoadedMenuItems(menuItemsList:ArrayList<TrainingMenuItem>) {
         val rvMenuItems: RecyclerView = binding.findViewById(R.id.rv_training_menu)
-        hideProgressDialog()
+//        hideProgressDialog()
         mMenuItemList = menuItemsList
 
         val menuItemsAdapter = TrainingMenuAdapter(requireActivity(),mMenuItemList)

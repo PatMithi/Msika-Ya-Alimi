@@ -19,6 +19,7 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlin.math.log
 
 class FirestoreClass {
 
@@ -208,7 +209,7 @@ class FirestoreClass {
                 // Hide the progress dialog if there is any error. And print the error in log.
                 when (fragment) {
                     is ProductsFragment -> {
-                        fragment.hideProgressDialog()
+//                        fragment.hideProgressDialog()
                     }
                 }
 
@@ -386,8 +387,7 @@ class FirestoreClass {
             }
             .addOnFailureListener{
                 e ->
-                // hide progress dialog
-                fragment.hideProgressDialog()
+
                 Log.e(fragment.javaClass.simpleName, "Error while loading market items!", e)
             }
     }
@@ -520,10 +520,10 @@ class FirestoreClass {
 
                 when (activity){
                     is MyCartActivity ->{
-                        activity.hideProgressDialog()
+//                        activity.hideProgressDialog()
                     }
                     is CheckoutActivity ->{
-                        activity.hideProgressDialog()
+//                        activity.hideProgressDialog()
                     }
                 }
 
@@ -960,7 +960,14 @@ class FirestoreClass {
                 activity.successfullyLoadedSearchResults(productsList)
             }
             .addOnFailureListener {
+                e ->
 
+                activity.hideProgressDialog()
+                Log.e(
+                    javaClass.simpleName,
+                    "Error while loading searched items",
+                    e
+                )
             }
     }
 
@@ -1149,7 +1156,6 @@ class FirestoreClass {
                 fragment.successfullyLoadedOrdersList(list)
             }.addOnFailureListener { e ->
 
-                fragment.hideProgressDialog()
 
                 Log.e(fragment.javaClass.simpleName, "Error while getting the orders list.", e)
 

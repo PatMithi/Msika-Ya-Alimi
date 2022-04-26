@@ -65,23 +65,6 @@
         </FrameLayout>
 
         <com.example.msikayaalimi.controller.MYATextView
-            android:id="@+id/tv_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fl_header_background"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="16dp"
-            android:background="@color/white"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:paddingStart="@dimen/marginsStart_settings_edit_label"
-            android:paddingTop="@dimen/marginsBottom_settings_edit_label"
-            android:paddingEnd="@dimen/marginEnd_settings_edit_label"
-            android:paddingBottom="@dimen/marginsBottom_settings_edit_label"
-            android:text="@string/edit_label"
-            android:textColor="@color/black"
-            android:textSize="@dimen/settings_edit_label_text_size"/>
-
-        <com.example.msikayaalimi.controller.MYATextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -128,13 +111,13 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_notifications"
+            android:id="@+id/ll_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ll_address"
             android:layout_marginStart="@dimen/settings_address_marginPadding"
-            android:layout_marginEnd="@dimen/settings_address_marginPadding"
             android:layout_marginTop="2dp"
+            android:layout_marginEnd="@dimen/settings_address_marginPadding"
             android:layout_marginBottom="@dimen/settings_address_marginPadding"
             android:background="@color/white"
             android:orientation="horizontal"
@@ -149,7 +132,7 @@
                 android:layout_marginEnd="@dimen/settings_address_label_margin"
                 android:layout_marginBottom="@dimen/settings_address_label_margin"
                 android:layout_weight="1"
-                android:text="@string/notifications_label"
+                android:text="@string/profile_label"
                 android:textColor="@color/black"
                 android:textSize="@dimen/settings_infoAddress_textSize" />
 
@@ -166,7 +149,7 @@
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ll_notifications"
+            android:layout_below="@id/ll_profile"
             android:labelFor="@id/ll_address"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/settings_btn_marginStartEnd"

@@ -2,11 +2,9 @@ package com.example.msikayaalimi.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.msikayaalimi.Firestore.FirestoreClass
@@ -18,6 +16,7 @@ import com.example.msikayaalimi.view.adapters.MyOrdersListAdapter
 import com.example.msikayaalimi.view.adapters.SoldProductsListAdapter
 import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYATextView
+import com.facebook.shimmer.ShimmerFrameLayout
 
 
 class OrdersFragment : BaseFragment() {
@@ -42,11 +41,11 @@ class OrdersFragment : BaseFragment() {
 
   private fun getUserDetails() {
     FirestoreClass().getUserDetailsUserType(this)
-    showProgressDialog(resources.getString(R.string.please_wait))
+//    showProgressDialog(resources.getString(R.string.please_wait))
   }
 
   fun successfullyLoadedUserDetails(user: User) {
-    hideProgressDialog()
+//    hideProgressDialog()
     mUser = user
     val tvEmptyOrders:MYATextView = binding.findViewById(R.id.tv_no_orders_yet)
     val tvEmptySoldProducts:MYATextView = binding.findViewById(R.id.tv_no_sold_products_yet)
@@ -77,7 +76,8 @@ class OrdersFragment : BaseFragment() {
 
   private fun getMyOrders(){
 
-    showProgressDialog(resources.getString((R.string.please_wait)))
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_orders).visibility = View.VISIBLE
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_orders).startShimmerAnimation()
 
     FirestoreClass().getMyOrders(this)
 
@@ -85,7 +85,9 @@ class OrdersFragment : BaseFragment() {
 
   fun successfullyLoadedOrdersList(ordersList: ArrayList<Order>){
 
-    hideProgressDialog()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_orders).stopShimmerAnimation()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_orders).visibility = View.GONE
+
     val rvMyOrders:RecyclerView = binding.findViewById(R.id.rv_my_orders_items)
     val tvEmptyOrders:MYATextView = binding.findViewById(R.id.tv_no_orders_yet)
 
@@ -110,12 +112,15 @@ class OrdersFragment : BaseFragment() {
   private fun getSoldProducts(){
 
     FirestoreClass().getSoldProducts(this)
-    showProgressDialog(resources.getString(R.string.please_wait))
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_orders).startShimmerAnimation()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_orders).visibility = View.VISIBLE
   }
 
   fun successfullyLoadedSoldProducts(soldProductsList:ArrayList<SoldProduct>){
 
-    hideProgressDialog()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_orders).stopShimmerAnimation()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_orders).visibility = View.GONE
+
     val rvSoldProductsItems:RecyclerView = binding.findViewById(R.id.rv_my_sold_products_items)
     val tvEmptySoldProducts:MYATextView = binding.findViewById(R.id.tv_no_sold_products_yet)
 

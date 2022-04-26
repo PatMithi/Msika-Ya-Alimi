@@ -17,6 +17,7 @@ import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYAButton
 import com.example.msikayaalimi.controller.MYATextView
 import com.example.msikayaalimi.controller.MYATextViewBold
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class MyCartActivity : BaseActivity() {
 
@@ -43,6 +44,9 @@ class MyCartActivity : BaseActivity() {
         super.onResume()
         //getCartItemsList()
         getProductsList()
+        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_my_cart)
+        shimmerFrameLayout.visibility = View.VISIBLE
+        shimmerFrameLayout.startShimmerAnimation()
     }
 
     /*
@@ -74,7 +78,9 @@ class MyCartActivity : BaseActivity() {
         val tvSubtotal:MYATextView = findViewById(R.id.tv_subtotal)
         val tvTotalAmount: MYATextViewBold = findViewById(R.id.tv_total_amount)
 
-        hideProgressDialog()
+        val shimmerFrameLayout:ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_my_cart)
+        shimmerFrameLayout.visibility = View.GONE
+        shimmerFrameLayout.stopShimmerAnimation()
 
         /*
         for each item that is in the cart, the application
@@ -169,9 +175,9 @@ class MyCartActivity : BaseActivity() {
     Firestore class to load all the products in the market
      */
     private fun getProductsList() {
-
-        showProgressDialog(resources.getString(R.string.please_wait))
-
+        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_my_cart)
+        shimmerFrameLayout.visibility = View.VISIBLE
+        shimmerFrameLayout.startShimmerAnimation()
         FirestoreClass().getListOfAllProducts(this@MyCartActivity)
     }
 
@@ -180,7 +186,9 @@ class MyCartActivity : BaseActivity() {
     been successfully retrieved from the Firestore class
      */
     fun successfullyLoadedProductsList(productsList: ArrayList<Product>) {
-        hideProgressDialog()
+        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_my_cart)
+        shimmerFrameLayout.visibility = View.GONE
+        shimmerFrameLayout.stopShimmerAnimation()
         mProductList = productsList
         getCartItemsList()
     }

@@ -99,6 +99,16 @@ dependencies {
     //ImageSlide
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
 
+    //Skeleton loader
+    implementation 'com.ethanhua:skeleton:1.1.2'
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+
+    //shimmering effect
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
 //    // Africa is talking API
 //    implementation("com.github.AfricasTalkingLtd.africastalking-java:core:3.4.8")
 

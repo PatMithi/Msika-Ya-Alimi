@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
@@ -14,6 +15,7 @@ import com.example.msikayaalimi.R
 import com.example.msikayaalimi.models.QuestionsAndAnswers
 import com.example.msikayaalimi.models.QuizQuestions
 import com.example.msikayaalimi.controller.*
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class ViewQuizActivity : BaseActivity(), View.OnClickListener {
 
@@ -35,6 +37,9 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
         }
 
         getQuizQuestions()
+        val shimmerFrameLayout:ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_view_quiz)
+        shimmerFrameLayout.visibility = View.VISIBLE
+        shimmerFrameLayout.startShimmerAnimation()
 
         val tvAnswerOne:MYATextView = findViewById(R.id.tv_answer_one)
         val tvAnswerTwo:MYATextView = findViewById(R.id.tv_answer_two)
@@ -69,7 +74,8 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
      * used to retrieve the questions
      */
     private fun getQuizQuestions(){
-        showProgressDialog(resources.getString(R.string.please_wait))
+//        val shimmerFrameLayout:ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_view_quiz)
+//        shimmerFrameLayout.startShimmerAnimation()
 
         // Resets the quiz so that none of the answers are selected.
         resetAnswers()
@@ -84,7 +90,9 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
      */
     fun successfullyLoadedQuestions(questions:QuestionsAndAnswers){
 
-        hideProgressDialog()
+        val shimmerFrameLayout:ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_view_quiz)
+        shimmerFrameLayout.stopShimmerAnimation()
+        shimmerFrameLayout.visibility = View.GONE
         val tvQuestion:MYATextViewBold = findViewById(R.id.tv_question_quiz)
         val tvAnswerOne:MYATextView = findViewById(R.id.tv_answer_one)
         val tvAnswerTwo:MYATextView = findViewById(R.id.tv_answer_two)
@@ -94,6 +102,19 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
         val pbQuestion:ProgressBar = findViewById(R.id.pb_question)
         val tvQuestionNumber:MYATextView = findViewById(R.id.tv_question_number)
         val btnSubmit:MYAButton = findViewById(R.id.btn_submit_answer)
+        val svViewQuiz:ScrollView = findViewById(R.id.sv_view_quiz)
+
+
+//        tvQuestion.visibility = View.VISIBLE
+//        tvAnswerOne.visibility = View.VISIBLE
+//        tvAnswerTwo.visibility = View.VISIBLE
+//        tvAnswerThree.visibility = View.VISIBLE
+//        tvAnswerFour.visibility = View.VISIBLE
+//        ivQuestionImage.visibility = View.VISIBLE
+//        pbQuestion.visibility = View.VISIBLE
+//        tvQuestionNumber.visibility = View.VISIBLE
+//        btnSubmit.visibility = View.VISIBLE
+
 
 
         mQuestionsList = questions.questions

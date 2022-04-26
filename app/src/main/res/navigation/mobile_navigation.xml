@@ -27,6 +27,6 @@
         android:id="@+id/navigation_training"
         android:name="com.example.msikayaalimi.view.fragments.TrainingFragment"
         tools:layout="@layout/fragment_training"
-        android:label="@string/title_training_activity"/>
+        android:label="Menu"/>
 
 </navigation>

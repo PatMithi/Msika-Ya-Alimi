@@ -12,6 +12,7 @@ import com.example.msikayaalimi.view.activities.MyCartActivity
 import com.example.msikayaalimi.view.activities.SettingsActivity
 import com.example.msikayaalimi.view.adapters.MarketItemsAdapter
 import com.example.msikayaalimi.controller.MYATextView
+import com.facebook.shimmer.ShimmerFrameLayout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -78,7 +79,9 @@ class MarketFragment : BaseFragment() {
   }
 
   suspend fun marketItemsSuccessfullyLoaded(marketItemsList:ArrayList<Product>) {
-    hideProgressDialog()
+
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_market).stopShimmerAnimation()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_market).visibility = View.GONE
 
     if (marketItemsList.size > 0) {
 
@@ -97,8 +100,7 @@ class MarketFragment : BaseFragment() {
   }
 
   private suspend fun getMarketItems() {
-    // show progress dialog
-    showProgressDialog(resources.getString(R.string.please_wait))
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_market).startShimmerAnimation()
 
     FirestoreClass().getMarketItems(this@MarketFragment)
   }

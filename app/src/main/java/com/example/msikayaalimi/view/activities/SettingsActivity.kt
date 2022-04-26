@@ -33,13 +33,13 @@ class SettingsActivity : BaseActivity(), View.OnClickListener {
         getUserDetails()
 
         val btnLogout:MYAButton = findViewById(R.id.btn_logout)
-        val tvEdit:MYATextView = findViewById(R.id.tv_edit)
         val llAddress:LinearLayout = findViewById(R.id.ll_address)
+        val llProfile:LinearLayout = findViewById(R.id.ll_profile)
 
 
-        tvEdit.setOnClickListener(this@SettingsActivity)
         btnLogout.setOnClickListener(this@SettingsActivity)
         llAddress.setOnClickListener(this@SettingsActivity)
+        llProfile.setOnClickListener(this@SettingsActivity)
     }
 
 //    override fun onResume() {
@@ -52,7 +52,7 @@ class SettingsActivity : BaseActivity(), View.OnClickListener {
         if (v != null) {
             when (v.id) {
 
-                R.id.tv_edit -> {
+                R.id.ll_profile -> {
                     val intent = Intent(this@SettingsActivity, ProfileActivity::class.java)
                     intent.putExtra(Constants.ADDITIONAL_USER_DETAILS, mUserDetails)
                     startActivity(intent)

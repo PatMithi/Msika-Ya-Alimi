@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_marginTop="2dp">
+    <LinearLayout
+        android:id="@+id/ll_farm_practices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ColorSecondary"
+        android:padding="@dimen/ll_checkout_padding"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_training_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/ColorSecondary"
+            android:orientation="horizontal"
+            android:padding="@dimen/product_item_image_padding">
+
+            <ImageView
+                android:id="@+id/iv_training_menu_item"
+                android:layout_width="@dimen/training_menu_image_size"
+                android:layout_height="@dimen/training_menu_image_size"
+                android:contentDescription="@string/content_description"
+                android:background="@color/white"
+                android:scaleType="fitXY" />
+            <LinearLayout
+                android:id="@+id/ll_farm_practices_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/cart_item_details_marginStart"
+                android:layout_marginEnd="@dimen/cart_item_details_marginEnd"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.example.msikayaalimi.controller.MYATextView
+                    android:id="@+id/tv_farm_practices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/label_text_view_textSize" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

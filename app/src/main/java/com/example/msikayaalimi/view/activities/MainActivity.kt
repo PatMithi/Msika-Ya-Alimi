@@ -119,7 +119,7 @@ class MainActivity : BaseActivity() {
         imageList.add(SlideModel(image1, "Welcome"))
         imageList.add(SlideModel(image2, "Shop best Deals!"))
         imageList.add(SlideModel(image3, "Msika Ya Alimi! \nUniting farmers and" +
-                "customers at the palm of your hand"))
+                " customers at the palm of your hand"))
 
         val isWelcome:ImageSlider = findViewById(R.id.is_welcome)
         isWelcome.setImageList(imageList, ScaleTypes.FIT)

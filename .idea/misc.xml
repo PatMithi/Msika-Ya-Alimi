@@ -53,15 +53,15 @@
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_view_quiz.xml" value="0.264" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_view_sold_product_details.xml" value="0.6" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/activity_view_training.xml" value="0.1" />
-        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/dialog_progress.xml" value="0.1" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/dialog_progress.xml" value="0.536" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/dropdown_item.xml" value="0.25" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_base.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_customer.xml" value="0.25" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
-        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_orders.xml" value="0.4" />
-        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_products.xml" value="0.176" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_orders.xml" value="0.33861671469740634" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_products.xml" value="0.4" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_search.xml" value="0.264" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/fragment_training.xml" value="0.264" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/grid_items_layout.xml" value="0.2" />
@@ -72,6 +72,12 @@
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/item_list_questions.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/item_list_quiz_menu.xml" value="0.2" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/list_item_layout.xml" value="0.2066420664206642" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/shimmer_list_placeholder.xml" value="0.25" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/shimmering_grid_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/shimmering_quiz_menu.xml" value="0.12239583333333333" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/shimmering_splash.xml" value="0.12239583333333333" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/shimmering_training_list.xml" value="0.12239583333333333" />
+        <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/shimmering_view_quiz.xml" value="0.176" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/tv_progress.xml" value="0.1" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/layout/welcome_filter_items.xml" value="0.175" />
         <entry key="..\:/Users/Patri/OneDrive/Documents/Dissertation/app/src/main/res/menu/add_product_menu.xml" value="0.1" />

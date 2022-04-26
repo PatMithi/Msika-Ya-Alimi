@@ -51,6 +51,35 @@
             android:textStyle="bold" />
     </RadioGroup>
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerFrameLayout_orders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/rg_orders_sold">
+
+        <LinearLayout
+            android:id="@+id/ll_shimmer_products"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmer_list_placeholder" />
+
+            <include layout="@layout/shimmer_list_placeholder" />
+
+            <include layout="@layout/shimmer_list_placeholder" />
+
+            <include layout="@layout/shimmer_list_placeholder" />
+
+            <include layout="@layout/shimmer_list_placeholder" />
+
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_my_orders_items"
         android:layout_width="match_parent"

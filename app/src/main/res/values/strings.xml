@@ -211,5 +211,6 @@
     <string name="label_congratulations">Congratulations! You have completed the quiz.</string>
     <string name="title_market">Market</string>
     <string name="btn_label_launch_market">Launch Marketplace</string>
+    <string name="profile_label">Profile</string>
 
 </resources>

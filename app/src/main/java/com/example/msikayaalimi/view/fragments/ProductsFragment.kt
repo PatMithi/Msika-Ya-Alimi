@@ -19,6 +19,8 @@ import com.example.msikayaalimi.view.adapters.UserProductsListAdapter
 import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYATextView
 import com.example.msikayaalimi.controller.SwipeToEditCallback
+import com.facebook.shimmer.ShimmerFrameLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -42,7 +44,7 @@ class ProductsFragment : BaseFragment() {
 
 
   private suspend fun getProductsList() {
-    showProgressDialog(resources.getString(R.string.please_wait))
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout).startShimmerAnimation()
     FirestoreClass().getListOfProducts(this)
   }
 
@@ -63,10 +65,13 @@ class ProductsFragment : BaseFragment() {
     val root = inflater.inflate(R.layout.fragment_products, container, false)
     binding = root
     return root
+
   }
 
   suspend  fun gotProductsListSuccessfully(productsList: ArrayList<Product>) {
-    hideProgressDialog()
+
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout).stopShimmerAnimation()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout).visibility = View.GONE
 
     if (productsList.size > 0) {
 
@@ -101,17 +106,19 @@ class ProductsFragment : BaseFragment() {
 
   private suspend fun getUserDetails() {
     FirestoreClass().getUserDetailsUserType(this@ProductsFragment)
-    showProgressDialog(resources.getString(R.string.please_wait))
+//    showProgressDialog(resources.getString(R.string.please_wait))
   }
 
   fun successfullyLoadedUserDetails(user: User) {
-    hideProgressDialog()
+//    hideProgressDialog()
     mUser = user
 
     if (user.userType == Constants.CUSTOMER) {
       binding.findViewById<RecyclerView>(R.id.rv_my_products).visibility = View.VISIBLE
       binding.findViewById<MYATextView>(R.id.tv_no_products_yet).visibility = View.GONE
       binding.findViewById<RecyclerView>(R.id.rv_category_items).visibility = View.GONE
+      binding.findViewById<FloatingActionButton>(R.id.fab_products).visibility = View.GONE
+
       setHasOptionsMenu(false)
 
 
@@ -123,6 +130,9 @@ class ProductsFragment : BaseFragment() {
 
       GlobalScope.launch(Dispatchers.Main) {
         getProductsList()
+      }
+      binding.findViewById<FloatingActionButton>(R.id.fab_products).setOnClickListener{
+        startActivity(Intent(activity, AddProductActivity::class.java))
       }
 
     }
@@ -168,29 +178,6 @@ class ProductsFragment : BaseFragment() {
     showProgressDialog(resources.getString(R.string.please_wait))
   }
 
-
-  // TODO Step 5: Override the onCreateOptionsMenu function and inflate the Add Product menu.
-  // START
-  override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-    inflater.inflate(R.menu.add_product_menu, menu)
-    super.onCreateOptionsMenu(menu, inflater)
-  }
-  // END
-
-  // TODO Step 6: Override the onOptionsItemSelected function and handle the actions of items.
-  // START
-  override fun onOptionsItemSelected(item: MenuItem): Boolean {
-    val id = item.itemId
-
-    if (id == R.id.add_product_action) {
-      // TODO Step 8: Launch the add product activity.
-      // START
-      startActivity(Intent(activity, AddProductActivity::class.java))
-      // END
-      return true
-    }
-    return super.onOptionsItemSelected(item)
-  }
 
   private fun alertDialogToDeleteProduct(productID: String) {
 

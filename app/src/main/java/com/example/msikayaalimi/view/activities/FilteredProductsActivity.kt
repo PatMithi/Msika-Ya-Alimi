@@ -38,7 +38,7 @@ class FilteredProductsActivity : BaseActivity() {
         if (intent.hasExtra(Constants.EXTRA_CREATOR_NAME)){
             mCreatorName = intent.getStringExtra(Constants.EXTRA_CREATOR_NAME)!!
 
-            tvTitle.text = "Products for: " + mCreatorName
+            tvTitle.text = "Products by: " + mCreatorName
         }
 
         if (intent.hasExtra(Constants.EXTRA_PRODUCT_OWNER_ID)){
