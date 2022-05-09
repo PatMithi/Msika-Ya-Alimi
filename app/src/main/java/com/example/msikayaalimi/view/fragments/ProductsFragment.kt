@@ -13,7 +13,7 @@ import com.example.msikayaalimi.R
 import com.example.msikayaalimi.models.Product
 import com.example.msikayaalimi.models.TrainingMenuItem
 import com.example.msikayaalimi.models.User
-import com.example.msikayaalimi.view.activities.AddProductActivity
+import com.example.msikayaalimi.view.activities.UpdateProductActivity
 import com.example.msikayaalimi.view.adapters.TrainingMenuAdapter
 import com.example.msikayaalimi.view.adapters.UserProductsListAdapter
 import com.example.msikayaalimi.controller.Constants
@@ -44,6 +44,7 @@ class ProductsFragment : BaseFragment() {
 
 
   private suspend fun getProductsList() {
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout).visibility = View.VISIBLE
     binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout).startShimmerAnimation()
     FirestoreClass().getListOfProducts(this)
   }
@@ -128,18 +129,23 @@ class ProductsFragment : BaseFragment() {
 
     }else {
 
+      binding.findViewById<FloatingActionButton>(R.id.fab_products).visibility = View.VISIBLE
+
       GlobalScope.launch(Dispatchers.Main) {
         getProductsList()
       }
       binding.findViewById<FloatingActionButton>(R.id.fab_products).setOnClickListener{
-        startActivity(Intent(activity, AddProductActivity::class.java))
+        startActivity(Intent(activity, UpdateProductActivity::class.java))
       }
 
     }
   }
 
   suspend fun successfullyLoadedMenuItems(menuItemsList:ArrayList<TrainingMenuItem>) {
-    hideProgressDialog()
+//    hideProgressDialog()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_filter).stopShimmerAnimation()
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_filter).visibility = View.GONE
+
     val rvMenuItems:RecyclerView = binding.findViewById(R.id.rv_my_products)
 
 
@@ -175,7 +181,9 @@ class ProductsFragment : BaseFragment() {
 
   private fun getMenuItems() {
     FirestoreClass().getMenuItems(this, Constants.CATEGORY_ITEM)
-    showProgressDialog(resources.getString(R.string.please_wait))
+//    showProgressDialog(resources.getString(R.string.please_wait))
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_filter).visibility = View.VISIBLE
+    binding.findViewById<ShimmerFrameLayout>(R.id.shimmerFrameLayout_filter).startShimmerAnimation()
   }
 
 

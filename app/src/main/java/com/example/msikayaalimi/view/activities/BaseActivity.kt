@@ -23,14 +23,14 @@ open class BaseActivity : AppCompatActivity() {
         if (errorMessage) {
             snackBarView.setBackgroundColor(
                 ContextCompat.getColor(
-                    this@BaseActivity,
+                    this,
                     R.color.colorSnackBarError
                 )
             )
         }else{
             snackBarView.setBackgroundColor(
                 ContextCompat.getColor(
-                    this@BaseActivity,
+                    this,
                     R.color.colorSnackBarSuccess
                 )
             )
@@ -38,7 +38,7 @@ open class BaseActivity : AppCompatActivity() {
         snackBar.show()
     }
 
-    fun showProgressDialog(text: String) {
+    fun displayProgressDialog(text: String) {
         mProgressDialog = Dialog(this)
 
         /* Set the screen content from  a layout resource.
@@ -51,7 +51,7 @@ open class BaseActivity : AppCompatActivity() {
         mProgressDialog.show()
     }
 
-    fun hideProgressDialog() {
+    fun dismissProgressDialog() {
         mProgressDialog.dismiss()
     }
 

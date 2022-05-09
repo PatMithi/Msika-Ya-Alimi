@@ -35,12 +35,12 @@ class ForgotPasswordActivity : BaseActivity() {
 
 
             if (email.text.toString().trim { it <= ' '}.isEmpty())  {
-                showErrorSnackBar(resources.getString(R.string.err_msg_enter_email),true)
+                showErrorSnackBar(resources.getString(R.string.err_msg_no_email_address),true)
             }else{
-                showProgressDialog(resources.getString(R.string.please_wait))
+                displayProgressDialog(resources.getString(R.string.please_wait))
                 FirebaseAuth.getInstance().sendPasswordResetEmail(email.text.toString().trim { it <= ' '})
                     .addOnCompleteListener{task ->
-                        hideProgressDialog()
+                        dismissProgressDialog()
 
                         if (task.isSuccessful) {
                             // Show the toast message and finish the forgot password activity to return to login screen

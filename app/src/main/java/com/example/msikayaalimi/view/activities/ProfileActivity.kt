@@ -9,6 +9,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
@@ -19,6 +20,7 @@ import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.Firestore.FirestoreClass
 import com.example.msikayaalimi.controller.*
 import com.example.msikayaalimi.controller.GlideLoader
+import com.facebook.shimmer.ShimmerFrameLayout
 import java.io.IOException
 
 class ProfileActivity : BaseActivity(), View.OnClickListener {
@@ -46,6 +48,9 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
         val rbMale:MYARadioButton = findViewById(R.id.rb_male)
         val rbFemale:MYARadioButton = findViewById(R.id.rb_female)
         val btnSave:MYAButton = findViewById(R.id.btn_submit)
+        val scrollView:ScrollView = findViewById(R.id.sv_profile_activity)
+
+
 
         if(mUserDetails.profileCompleted == 0){
 
@@ -61,6 +66,7 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
             etLastName.setText(mUserDetails.lastName)
         } else{
 
+            // Display the toolbar to show the title
             setupActionBar()
 
             tvTitle.text = resources.getString(R.string.update_profile_title)
@@ -90,8 +96,8 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
 
         }
 
-        ivUserPhoto.setOnClickListener(this@ProfileActivity)
-        btnSave.setOnClickListener(this@ProfileActivity)
+        ivUserPhoto.setOnClickListener(this)
+        btnSave.setOnClickListener(this)
 
     }
 
@@ -135,9 +141,11 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
                 R.id.btn_submit -> {
                     if (validateUserProfileDetails()) {
 
-                        showProgressDialog(
-                            resources.getString(R.string.please_wait)
-                        )
+                        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_profile_activity)
+                        shimmerFrameLayout.visibility = View.VISIBLE
+                        shimmerFrameLayout.startShimmerAnimation()
+                        val scrollView:ScrollView = findViewById(R.id.sv_profile_activity)
+                        scrollView.visibility = View.GONE
 
                         // uploads image url if the image url is not empty
                         if (mSelectedImageUri != null) {
@@ -185,16 +193,20 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
     }
 
     fun userProfileUpdatedSuccessfully() {
-        hideProgressDialog()
+        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_profile_activity)
+        shimmerFrameLayout.visibility = View.GONE
+        shimmerFrameLayout.stopShimmerAnimation()
+        val scrollView:ScrollView = findViewById(R.id.sv_profile_activity)
+        scrollView.visibility = View.VISIBLE
 
         Toast.makeText(
-            this@ProfileActivity,
+            this,
             resources.getString(R.string.msg_profile_successfully_updated),
             Toast.LENGTH_SHORT
         ).show()
 
 
-        startActivity(Intent(this@ProfileActivity, MainActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 

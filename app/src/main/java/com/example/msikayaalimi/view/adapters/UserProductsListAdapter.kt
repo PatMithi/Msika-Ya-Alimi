@@ -69,7 +69,7 @@ open class UserProductsListAdapter (
     }
 
     fun notifyEditItemProducts(activity: Activity, position: Int){
-        val intent = Intent(context, AddProductActivity::class.java)
+        val intent = Intent(context, UpdateProductActivity::class.java)
         intent.putExtra(Constants.EXTRA_PRODUCTS_EDIT,list[position])
         activity.startActivity(intent)
         notifyItemChanged(position)

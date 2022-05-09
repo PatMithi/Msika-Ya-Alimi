@@ -158,7 +158,7 @@ class UpdateAddressActivity : BaseActivity(), View.OnClickListener {
 
         if (validateAddressDetails()) {
 
-            showProgressDialog(resources.getString(R.string.please_wait))
+            displayProgressDialog(resources.getString(R.string.please_wait))
 
             val addressType: String = when {
                 rbHome.isChecked -> {
@@ -196,7 +196,7 @@ class UpdateAddressActivity : BaseActivity(), View.OnClickListener {
     }
 
     fun successfullyUploadedAddress(){
-        hideProgressDialog()
+        dismissProgressDialog()
 
         val successMessage: String = if (mAddressDetails != null && mAddressDetails!!.id.isNotEmpty()){
             resources.getString(R.string.msg_successfully_updated_address)

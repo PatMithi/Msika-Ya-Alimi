@@ -10,6 +10,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -17,6 +18,7 @@ import com.example.msikayaalimi.Firestore.FirestoreClass
 import com.example.msikayaalimi.R
 import com.example.msikayaalimi.models.Product
 import com.example.msikayaalimi.controller.*
+import com.facebook.shimmer.ShimmerFrameLayout
 import java.io.IOException
 
 /*
@@ -25,16 +27,29 @@ import java.io.IOException
 
  */
 
-class AddProductActivity : BaseActivity(), View.OnClickListener {
+class UpdateProductActivity : BaseActivity(), View.OnClickListener {
 
-    private var mSelectedImageUri: Uri? = null
-    private var mProductImageUrl: String = ""
+    /**
+     * Global variable to store the details of the chosen
+     * product to edit.
+     */
     private var mProductDetails: Product? = null
 
+    /**
+     * Global variable to store the URL of the file which has been selected
+     * from the user's device
+     */
+    private var mSelectedImageUri: Uri? = null
+
+    /**
+     * Global variable used tp store the image URL of the file hat is stored
+     * in Google Firebase
+     */
+    private var mProductImageUrl: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_product)
+        setContentView(R.layout.activity_update_product)
 
         setupActionBar()
 
@@ -63,7 +78,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         if (mProductDetails != null){
             GlideLoader(this).loadProductImage(mProductDetails!!.productImage, ivAddProductImage)
 
-            tvTitle.setText(mProductDetails!!.productTitle)
+            tvTitle.text = mProductDetails!!.productTitle
             etProductTitle.setText(mProductDetails!!.productTitle)
             etProductPrice.setText(mProductDetails!!.productPrice)
             etProductDescription.setText(mProductDetails!!.productDescription)
@@ -94,11 +109,12 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
 
         }
 
-
-
-
     }
 
+
+    /**
+     * Function to setup the back button in the toolbar
+     */
     private fun setupActionBar(){
         val addProductsToolbar:androidx.appcompat.widget.Toolbar = findViewById(R.id.add_product_activity_toolbar)
         setSupportActionBar(addProductsToolbar)
@@ -112,6 +128,11 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         addProductsToolbar.setNavigationOnClickListener{onBackPressed()}
     }
 
+
+    /**
+     * function used to determine how elements in the activity will
+     * behave once they have been clicked by a user
+     */
     override fun onClick(v: View?) {
         if (v!= null) {
             when(v.id) {
@@ -122,9 +143,9 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
                         )
                         == PackageManager.PERMISSION_GRANTED
                     ) {
-                        Constants.showSelectedImage(this@AddProductActivity)
+                        Constants.showSelectedImage(this@UpdateProductActivity)
                     } else {
-                        /* Request permission to be granted to the application. These permissions
+                        /**Request permission from the user to access their. These permissions
                         must be requested in the manifest. User may not have uploaded profile photo
                         so it is essential to ask for permissions again
                          */
@@ -150,23 +171,45 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun uploadProductImage(){
-        showProgressDialog(resources.getString(R.string.please_wait))
+        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_update_products)
+        shimmerFrameLayout.visibility = View.VISIBLE
+        shimmerFrameLayout.startShimmerAnimation()
+        val scrollView:ScrollView = findViewById(R.id.sv_update_details)
+        scrollView.visibility = View.GONE
         FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageUri, Constants.PRODUCT_IMAGE)
     }
 
-    fun productUploadSuccess(){
-        hideProgressDialog()
+    /**
+     * Response once the product has been successfully added to firebase
+     */
+    fun successfullyUploadedProduct(){
+
+        /**
+         * Hides the shimmering layout to display the response
+         */
+        hideSHimmerLayout()
+
+        /**
+         * Shows the farmer they have successfully added a product to Firebase
+         */
         Toast.makeText(
-            this@AddProductActivity,
+            this@UpdateProductActivity,
             resources.getString(R.string.product_Successfully_uploaded),
             Toast.LENGTH_SHORT
         ).show()
         finish()
     }
 
+    fun hideSHimmerLayout(){
+        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_update_products)
+        shimmerFrameLayout.stopShimmerAnimation()
+        shimmerFrameLayout.visibility = View.GONE
+        val scrollView:ScrollView = findViewById(R.id.sv_update_details)
+        scrollView.visibility = View.GONE
+    }
+
     fun imageSuccessfullyUploaded(imageURL: String) {
-//        hideProgressDialog()
-//        showErrorSnackBar("Product image has been successfully uploaded. Image URL: $imageURL", false)
+
         mProductImageUrl = imageURL
 
         uploadProductDetails()
@@ -288,7 +331,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         val rbNuts:MYARadioButton = findViewById(R.id.rb_nuts)
         return when {
             mSelectedImageUri == null -> {
-                showErrorSnackBar(resources.getString(R.string.err_msg_select_product_image), true)
+                showErrorSnackBar(resources.getString(R.string.err_msg_no_image_selected), true)
                 false
             }
 
@@ -391,13 +434,13 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         productHashMap[Constants.PRODUCT_CATEGORY] = category
 
         FirestoreClass().updateProductInfo(this, mProductDetails!!.product_id, productHashMap)
-        showProgressDialog(resources.getString(R.string.please_wait))
+        displayProgressDialog(resources.getString(R.string.please_wait))
 
 
     }
 
     fun successfullyUpdatedProductInfo(){
-        hideProgressDialog()
+        dismissProgressDialog()
 
         Toast.makeText(
             this,

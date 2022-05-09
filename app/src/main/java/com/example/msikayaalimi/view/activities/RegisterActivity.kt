@@ -75,11 +75,11 @@ class RegisterActivity : BaseActivity() {
                 false
             }
             TextUtils.isEmpty(eMail.text.toString().trim { it <= ' '}) -> {
-                showErrorSnackBar(resources.getString(R.string.err_msg_enter_email), true)
+                showErrorSnackBar(resources.getString(R.string.err_msg_no_email_address), true)
                 false
             }
             TextUtils.isEmpty(fstPassword.text.toString().trim { it <= ' '}) -> {
-                showErrorSnackBar(resources.getString(R.string.err_msg_password), true)
+                showErrorSnackBar(resources.getString(R.string.error_msg_no_password_entered), true)
                 false
             }
             TextUtils.isEmpty(confirmPassword.text.toString().trim { it <= ' '}) -> {
@@ -122,7 +122,7 @@ class RegisterActivity : BaseActivity() {
         if (validateRegistrationDetails()) {
 
 
-            showProgressDialog(resources.getString(R.string.please_wait))
+            displayProgressDialog(resources.getString(R.string.please_wait))
 
             val email:String = eMail.text.toString().trim { it <=' '}
             val password: String = fstPassword.text.toString().trim {it <= ' '}
@@ -152,7 +152,7 @@ class RegisterActivity : BaseActivity() {
 //                            finish()
 
                         }else {
-                            hideProgressDialog()
+                            dismissProgressDialog()
                             // If registrations is not successful
                             showErrorSnackBar(task.exception!!.message.toString(), true)
                         }
@@ -164,7 +164,7 @@ class RegisterActivity : BaseActivity() {
     fun userRegistrationSuccess() {
 
         // Hide progress dialog
-        hideProgressDialog()
+        dismissProgressDialog()
 
         // Log user out and return to the welcome screen
         FirebaseAuth.getInstance().signOut()

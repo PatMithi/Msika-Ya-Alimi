@@ -31,8 +31,8 @@
     // error message strings
     <string name="err_msg_enter_first_name">Please Enter first name.</string>
     <string name="err_msg_enter_last_name">Please enter last name</string>
-    <string name="err_msg_enter_email">Please enter email</string>
-    <string name="err_msg_password">Please enter password</string>
+    <string name="err_msg_no_email_address">Please enter email</string>
+    <string name="error_msg_no_password_entered">Please enter password</string>
     <string name="err_msg_confirm_empty">Please enter password confirmation</string>
     <string name="err_msg_mismatch">Passwords do not matvh</string>
     <string name="err_msg_terms_and_conditions">Please agree terms and conditions</string>
@@ -83,7 +83,7 @@
     <string name="et_product_location_hint">Product Location</string>
     <string name="et_product_quantity_hint">Product Quantity</string>
     <string name="submit_btn">Submit</string>
-    <string name="err_msg_select_product_image">Please select an image</string>
+    <string name="err_msg_no_image_selected">Please select an image</string>
     <string name="err_msg_product_title_prompt">Please enter a product title</string>
     <string name="err_msg_product_price_prompt">Please enter a price</string>
     <string name="err_msg_product_description_prompt">Please enter a description</string>

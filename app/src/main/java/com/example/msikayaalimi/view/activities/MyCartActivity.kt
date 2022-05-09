@@ -116,13 +116,13 @@ class MyCartActivity : BaseActivity() {
             load the data into a recyclerView to
             display the items in a scrollView
              */
-            rvCartItems.layoutManager = LinearLayoutManager(this@MyCartActivity)
+            rvCartItems.layoutManager = LinearLayoutManager(this)
             rvCartItems.setHasFixedSize(true)
 
             /*
             Set the adapter used to display the items
              */
-            val cartListAdapter = CartItemsAdapter(this@MyCartActivity, mCartListItems, true)
+            val cartListAdapter = CartItemsAdapter(this, mCartListItems, true)
             rvCartItems.adapter = cartListAdapter
 
             /*
@@ -165,9 +165,7 @@ class MyCartActivity : BaseActivity() {
      */
     private fun getCartItemsList() {
 
-        //showProgressDialog(resources.getString(R.string.please_wait))
-
-        FirestoreClass().getCartList(this@MyCartActivity)
+        FirestoreClass().getCartList(this)
     }
 
     /*
@@ -178,7 +176,7 @@ class MyCartActivity : BaseActivity() {
         val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_my_cart)
         shimmerFrameLayout.visibility = View.VISIBLE
         shimmerFrameLayout.startShimmerAnimation()
-        FirestoreClass().getListOfAllProducts(this@MyCartActivity)
+        FirestoreClass().getListOfAllProducts(this)
     }
 
     /*
@@ -199,11 +197,11 @@ class MyCartActivity : BaseActivity() {
      */
     fun successfullyDeletedItemFromCart(){
 
-        hideProgressDialog()
+        dismissProgressDialog()
 
         Toast.makeText(
 
-            this@MyCartActivity,
+            this,
             resources.getString(R.string.msg_item_remoed_successfully),
             Toast.LENGTH_SHORT
         ).show()
@@ -212,7 +210,7 @@ class MyCartActivity : BaseActivity() {
     }
 
     fun successfullyUpdatedCart() {
-        hideProgressDialog()
+        dismissProgressDialog()
         getCartItemsList()
     }
 }

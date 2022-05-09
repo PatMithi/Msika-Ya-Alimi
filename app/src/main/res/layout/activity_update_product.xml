@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".view.activities.AddProductActivity">
+    tools:context=".view.activities.UpdateProductActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/add_product_activity_toolbar"
@@ -31,7 +31,29 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <ScrollView
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerFrameLayout_update_products"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/add_product_activity_toolbar">
+
+        <LinearLayout
+            android:id="@+id/ll_shimmer_products"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmering_splash" />
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <ScrollView
+            android:id="@+id/sv_update_details"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:fillViewport="true"

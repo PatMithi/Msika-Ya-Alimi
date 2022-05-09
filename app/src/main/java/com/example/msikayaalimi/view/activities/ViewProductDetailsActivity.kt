@@ -73,7 +73,7 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
     // fun to get the selected product
 
     private fun getProductDetails() {
-        showProgressDialog(resources.getString(R.string.please_wait))
+        displayProgressDialog(resources.getString(R.string.please_wait))
         FirestoreClass().getProductDetails(this, mProductID)
 
     }
@@ -117,7 +117,7 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
          */
 
         if (product.productQuantity.toInt() == 0) {
-            hideProgressDialog()
+            dismissProgressDialog()
 
             addToCartButton.visibility = View.GONE
             productQuantity.text = resources.getString(R.string.out_of_stock_label)
@@ -130,7 +130,7 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
         }else{
 
             if(FirestoreClass().getCurrentUserID() == mProductOwnerId){
-                hideProgressDialog()
+                dismissProgressDialog()
                 addToCartButton.visibility = View.GONE
                 btnGoToCart.visibility = View.GONE
             }
@@ -156,7 +156,7 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
 
         // checks if the item has already been added to the cart
         if(FirestoreClass().getCurrentUserID() == product.user_id){
-            hideProgressDialog()
+            dismissProgressDialog()
         }else{
             FirestoreClass().checkIfItemInCart(this, mProductID)
         }
@@ -187,13 +187,13 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
             Constants.DEFAULT_CART_QUANTITY
         )
 
-        showProgressDialog(resources.getString(R.string.please_wait))
+        displayProgressDialog(resources.getString(R.string.please_wait))
         FirestoreClass().addCartItems(this, cartItem)
     }
 
     fun successfullyAddedItemToCart() {
 
-        hideProgressDialog()
+        dismissProgressDialog()
 
         Toast.makeText(
             this@ViewProductDetailsActivity,
@@ -217,7 +217,7 @@ class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
     fun productInCart() {
 
         val addToCartButton:MYAButton = findViewById(R.id.btn_add_to_cart)
-        hideProgressDialog()
+        dismissProgressDialog()
         addToCartButton.visibility = View.GONE
 
     }

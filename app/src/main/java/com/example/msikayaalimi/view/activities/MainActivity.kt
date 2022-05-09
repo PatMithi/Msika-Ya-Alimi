@@ -4,9 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.SearchView
-import androidx.core.view.get
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
@@ -18,7 +15,6 @@ import com.example.msikayaalimi.R
 import com.example.msikayaalimi.models.Welcome
 import com.example.msikayaalimi.view.adapters.WelcomeFilterAdapter
 import com.example.msikayaalimi.controller.Constants
-import com.example.msikayaalimi.controller.GlideLoader
 import com.example.msikayaalimi.controller.MYAButton
 import com.example.msikayaalimi.models.WelcomeSlideshow
 
@@ -69,11 +65,11 @@ class MainActivity : BaseActivity() {
 
     private fun getWelcomeImages(){
         FirestoreClass().getWelcomeImages(this)
-        showProgressDialog(resources.getString(R.string.please_wait))
+        displayProgressDialog(resources.getString(R.string.please_wait))
     }
 
     fun successfullyLoadedWelcomeImages(images:ArrayList<Welcome>){
-        hideProgressDialog()
+        dismissProgressDialog()
         val rvFilters:RecyclerView = findViewById(R.id.rv_welcome_filters)
 
         if (images.size > 0){

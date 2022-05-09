@@ -19,7 +19,6 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlin.math.log
 
 class FirestoreClass {
 
@@ -36,7 +35,7 @@ class FirestoreClass {
                 activity.userRegistrationSuccess()
             }
             .addOnFailureListener { e ->
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
                 Log.e(
                     activity.javaClass.simpleName,
                     "Error while registering user",
@@ -111,10 +110,10 @@ class FirestoreClass {
                 // Hide the progress dialog if there is any error. And print the error in log.
                 when (context) {
                     is LoginActivity -> {
-                        context.hideProgressDialog()
+
                     }
                     is SettingsActivity -> {
-                        context.hideProgressDialog()
+                        context.dismissProgressDialog()
                     }
                 }
 
@@ -143,7 +142,7 @@ class FirestoreClass {
             activity.successfullyLoadedWelcomeImages(images)
 
             }.addOnFailureListener { e ->
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
                 Log.e(javaClass.simpleName, "Error while loading welcome images", e)
 
             }
@@ -166,7 +165,7 @@ class FirestoreClass {
                 activity.successfullyLoadedSlideshow(images[0])
             }.addOnFailureListener { e ->
 
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
                 Log.e(javaClass.simpleName, "Error while loading slide images", e)
 
             }
@@ -242,7 +241,7 @@ class FirestoreClass {
                 when (activity) {
                     is ProfileActivity -> {
                         // Hide progress dialog
-                        activity.hideProgressDialog()
+//                        activity.hideProgressDialog()
                     }
                 }
 
@@ -285,7 +284,7 @@ class FirestoreClass {
                                 activity.imageSuccessfullyUploaded(uri.toString())
                             }
 
-                            is AddProductActivity -> {
+                            is UpdateProductActivity -> {
                                 activity.imageSuccessfullyUploaded(uri.toString())
                             }
                         }
@@ -296,10 +295,10 @@ class FirestoreClass {
                 // Hide the progress dialog if there is any error. And print the error in log.
                 when (activity) {
                     is ProfileActivity -> {
-                        activity.hideProgressDialog()
+                        activity.dismissProgressDialog()
                     }
-                    is AddProductActivity -> {
-                        activity.hideProgressDialog()
+                    is UpdateProductActivity -> {
+                        activity.dismissProgressDialog()
                     }
                 }
 
@@ -311,16 +310,16 @@ class FirestoreClass {
             }
     }
 
-    fun uploadProductDetails(activity: AddProductActivity, productInfo: Product) {
+    fun uploadProductDetails(activity: UpdateProductActivity, productInfo: Product) {
         // creates or accesses the products collection
         mFirestore.collection(Constants.PRODUCTS)
             .document()
             .set(productInfo, SetOptions.merge())
             .addOnSuccessListener {
-                activity.productUploadSuccess()
+                activity.successfullyUploadedProduct()
             }
             .addOnFailureListener { e ->
-                activity.hideProgressDialog()
+                activity.hideSHimmerLayout()
                 Log.e(
                     activity.javaClass.simpleName,
                     "Error while uploading product details!",
@@ -427,7 +426,7 @@ class FirestoreClass {
             .addOnFailureListener{
                     e ->
 
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
 
                 Log.e(
                     activity.javaClass.simpleName,
@@ -448,7 +447,7 @@ class FirestoreClass {
             }
             .addOnFailureListener{
                 e->
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
 
                 Log.e(
                     activity.javaClass.simpleName,
@@ -470,13 +469,13 @@ class FirestoreClass {
                     if(document.documents.size > 0) {
                         activity.productInCart()
                     }else{
-                        activity.hideProgressDialog()
+                        activity.dismissProgressDialog()
                     }
             }
             .addOnFailureListener{
                 e ->
 
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
 
                 Log.e(
                     activity.javaClass.simpleName,
@@ -567,11 +566,11 @@ class FirestoreClass {
 
                 when(activity){
                     is MyCartActivity ->{
-                        activity.hideProgressDialog()
+                        activity.dismissProgressDialog()
                     }
 
                     is CheckoutActivity ->{
-                        activity.hideProgressDialog()
+                        activity.dismissProgressDialog()
                     }
                 }
 
@@ -597,7 +596,7 @@ class FirestoreClass {
                     e ->
                 when (context) {
                     is MyCartActivity -> {
-                        context.hideProgressDialog()
+                        context.dismissProgressDialog()
                     }
                 }
 
@@ -699,7 +698,7 @@ class FirestoreClass {
 
             .addOnFailureListener {
                     e ->
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
 
                 Log.e(activity.javaClass.simpleName, "Error while loading menu items", e)
             }
@@ -737,7 +736,7 @@ class FirestoreClass {
                 Log.e(activity.javaClass.simpleName, "Error while getting menu item", e)
                 when(activity) {
                     is ViewTrainingActivity ->{
-                        activity.hideProgressDialog()
+                        activity.dismissProgressDialog()
                     }
                 }
             }
@@ -772,7 +771,7 @@ class FirestoreClass {
 
                 when (activity){
                     is FilteredProductsActivity ->{
-                        activity.hideProgressDialog()
+                        activity.dismissProgressDialog()
                     }
             }
 
@@ -808,7 +807,7 @@ class FirestoreClass {
 
                 when (activity){
                     is FilteredProductsActivity ->{
-                        activity.hideProgressDialog()
+                        activity.dismissProgressDialog()
                     }
                 }
 
@@ -844,7 +843,7 @@ class FirestoreClass {
 
                 when (activity){
                     is FilteredProductsActivity ->{
-                        activity.hideProgressDialog()
+                        activity.dismissProgressDialog()
                     }
                 }
 
@@ -928,7 +927,7 @@ class FirestoreClass {
             .addOnFailureListener {
                 e ->
 
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
 
                 Log.e(
                     activity.javaClass.simpleName,
@@ -962,7 +961,7 @@ class FirestoreClass {
             .addOnFailureListener {
                 e ->
 
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
                 Log.e(
                     javaClass.simpleName,
                     "Error while loading searched items",
@@ -1046,7 +1045,7 @@ class FirestoreClass {
             }
     }
 
-    fun updateProductInfo(activity: AddProductActivity, productID: String, productHashMap: HashMap<String, Any>){
+    fun updateProductInfo(activity: UpdateProductActivity, productID: String, productHashMap: HashMap<String, Any>){
         mFirestore.collection(Constants.PRODUCTS)
             .document(productID)
             .update(productHashMap)
@@ -1057,7 +1056,7 @@ class FirestoreClass {
             }
             .addOnFailureListener { e ->
 
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
 
                 Log.e(
                     activity.javaClass.simpleName,
@@ -1129,7 +1128,7 @@ class FirestoreClass {
 
         }.addOnFailureListener { e ->
             // Here call a function of base activity for transferring the result to it.
-            activity.hideProgressDialog()
+            activity.dismissProgressDialog()
 
             Log.e(activity.javaClass.simpleName, "Error while updating all the details after order placed.", e)
         }
@@ -1209,7 +1208,7 @@ class FirestoreClass {
 
             }.addOnFailureListener {
                     e ->
-                activity.hideProgressDialog()
+                activity.dismissProgressDialog()
 
                 Log.e(
                     javaClass.simpleName,

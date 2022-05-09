@@ -14,6 +14,7 @@ import com.example.msikayaalimi.R
 import com.example.msikayaalimi.models.Address
 import com.example.msikayaalimi.view.adapters.AddressListAdapter
 import com.example.msikayaalimi.controller.*
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class AddressListActivity : BaseActivity(), View.OnClickListener {
 
@@ -88,12 +89,18 @@ class AddressListActivity : BaseActivity(), View.OnClickListener {
 
     private fun getAddressList(){
         FirestoreClass().getAddressesList(this)
-        showProgressDialog(resources.getString(R.string.please_wait))
+        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_address_list_activity)
+        shimmerFrameLayout.visibility = View.VISIBLE
+        shimmerFrameLayout.startShimmerAnimation()
 
     }
 
     fun successfullyLoadedAddressList(addressList:ArrayList<Address>){
-        hideProgressDialog()
+        val shimmerFrameLayout: ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_address_list_activity)
+        shimmerFrameLayout.visibility = View.GONE
+        shimmerFrameLayout.stopShimmerAnimation()
+        val addAddressBtn:MYAButton = findViewById(R.id.btn_add_address)
+        addAddressBtn.visibility = View.VISIBLE
 
         val tvEmptyAddress:MYATextView = findViewById(R.id.tv_no_addresses_yet)
         val rvAddressList:RecyclerView = findViewById(R.id.rv_address_list)
@@ -125,7 +132,7 @@ class AddressListActivity : BaseActivity(), View.OnClickListener {
                 val deleteSwipeHandler = object : SwipeToDeleteCallback(this){
                     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                        showProgressDialog(resources.getString(R.string.please_wait))
+                        displayProgressDialog(resources.getString(R.string.please_wait))
                         FirestoreClass().deleteAddress(this@AddressListActivity,
                             addressList[viewHolder.adapterPosition].id)
 
@@ -146,7 +153,7 @@ class AddressListActivity : BaseActivity(), View.OnClickListener {
     }
 
     fun successfullyDeletedAddress(){
-        hideProgressDialog()
+        dismissProgressDialog()
 
         Toast.makeText(
             this,

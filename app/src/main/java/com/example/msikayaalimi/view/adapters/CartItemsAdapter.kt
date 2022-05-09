@@ -91,7 +91,7 @@ class CartItemsAdapter (
             holder.itemView.findViewById<ImageButton>(R.id.ib_delete_cart_item).setOnClickListener {
                 when(context){
                     is MyCartActivity ->{
-                        context.showProgressDialog(context.resources.getString(R.string.please_wait))
+                        context.displayProgressDialog(context.resources.getString(R.string.please_wait))
                     }
                 }
                 FirestoreClass().deleteItemFromCart(context, model.id)
@@ -113,7 +113,7 @@ class CartItemsAdapter (
                     // show progress dialog to make user wait until process is completed
 
                     if (context is MyCartActivity) {
-                        context.showProgressDialog(context.resources.getString(R.string.please_wait))
+                        context.displayProgressDialog(context.resources.getString(R.string.please_wait))
                     }
 
                     FirestoreClass().updateCartItems(context, model.id, itemHashMap)
@@ -129,7 +129,7 @@ class CartItemsAdapter (
 
                     itemHashMap[Constants.CART_QUANTITY] = (cartQuantity +1).toString()
                     if (context is MyCartActivity) {
-                        context.showProgressDialog(context.resources.getString(R.string.please_wait))
+                        context.displayProgressDialog(context.resources.getString(R.string.please_wait))
                     }
 
                     FirestoreClass().updateCartItems(context, model.id, itemHashMap)

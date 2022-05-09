@@ -49,12 +49,12 @@ class ViewTrainingActivity : BaseActivity() {
     fun getMenuItemDetails() {
 
         FirestoreClass().getCurrentMenuItem(this, mMenuItemId)
-        showProgressDialog(resources.getString(R.string.please_wait))
+        displayProgressDialog(resources.getString(R.string.please_wait))
 
     }
 
     fun successfullyLoadedMenuItem(menuItem:TrainingMenuItem) {
-        hideProgressDialog()
+        dismissProgressDialog()
         mMenuItem = menuItem
 
         val ivTrainingPhoto:ImageView = findViewById(R.id.iv_training_photo)
@@ -120,11 +120,11 @@ class ViewTrainingActivity : BaseActivity() {
 
     private fun getQuizMenu(){
         FirestoreClass().getQuizMenuItems(this)
-        showProgressDialog(resources.getString(R.string.please_wait))
+        displayProgressDialog(resources.getString(R.string.please_wait))
     }
 
     fun successfullyLoadedQuizMenu(quizMenu:ArrayList<TrainingMenuItem>){
-        hideProgressDialog()
+        dismissProgressDialog()
 
         val tvTitle:MYATextViewBold = findViewById(R.id.tv_view_training_title)
         val tvIntro:MYATextView = findViewById(R.id.tv_view_training_introduction)

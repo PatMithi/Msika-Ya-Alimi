@@ -26,7 +26,7 @@ import com.example.msikayaalimi.controller.MYATextViewBold
 class CheckoutActivity : BaseActivity() {
 
     private lateinit var mUser: User
-    private var mAddressDetails:Address? = null
+    private var mUserAddress:Address? = null
     private lateinit var mProductsList:ArrayList<Product>
     private lateinit var mCartList: ArrayList<CartItem>
     private var mSubTotal:Double = 0.0
@@ -41,23 +41,27 @@ class CheckoutActivity : BaseActivity() {
         getUserDetails()
         val btnPay:MYAButton = findViewById(R.id.btn_pay)
 
+
+        /**
+         * Button to connect to Flutterwave API to complete the payment
+         */
         btnPay.setOnClickListener {
             payFlutter()
         }
 
         if(intent.hasExtra(Constants.EXTRA_SELECTED_ADDRESS_CHECKOUT)){
-            mAddressDetails = intent.getParcelableExtra<Address>(Constants.EXTRA_SELECTED_ADDRESS_CHECKOUT)
+            mUserAddress = intent.getParcelableExtra<Address>(Constants.EXTRA_SELECTED_ADDRESS_CHECKOUT)
 
-            if (mAddressDetails != null) {
+            if (mUserAddress != null) {
                 val tvFName:MYATextViewBold = findViewById(R.id.tv_address_full_checkout)
                 val tvAddressDetails:MYATextView = findViewById(R.id.tv_address_details_checkout)
                 val tvAddressType:MYATextView = findViewById(R.id.tv_address_type_checkout)
                 val tvPhoneNumber:MYATextView = findViewById(R.id.tv_address_mobile_number_checkout)
 
-                tvAddressType.text = mAddressDetails?.type
-                tvFName.text = mAddressDetails?.fulName
-                tvAddressDetails.text = "${mAddressDetails!!.address}, ${mAddressDetails!!.district}"
-                tvPhoneNumber.text = mAddressDetails?.mobileNumber
+                tvAddressType.text = mUserAddress?.type
+                tvFName.text = mUserAddress?.fulName
+                tvAddressDetails.text = "${mUserAddress!!.address}, ${mUserAddress!!.district}"
+                tvPhoneNumber.text = mUserAddress?.mobileNumber
 
             }
         }
@@ -66,12 +70,13 @@ class CheckoutActivity : BaseActivity() {
     }
 
     private fun getCartItems(){
+
         FirestoreClass().getCartList(this)
 
     }
 
     fun successfullyLoadedCartList(cartList: ArrayList<CartItem>){
-        hideProgressDialog()
+        dismissProgressDialog()
         val rvCartItems:RecyclerView = findViewById(R.id.rv_checkout_cart_items)
         val tvSubtotal:MYATextView = findViewById(R.id.tv_subtotal_checkout)
         val tvTransaction:MYATextView = findViewById(R.id.tv_transaction_fee_checkout)
@@ -123,7 +128,8 @@ class CheckoutActivity : BaseActivity() {
     }
 
     private fun getProducts(){
-        showProgressDialog(resources.getString(R.string.please_wait))
+
+        displayProgressDialog(resources.getString(R.string.please_wait))
         FirestoreClass().getListOfAllProducts(this)
 
     }
@@ -141,7 +147,7 @@ class CheckoutActivity : BaseActivity() {
     }
 
     fun successfullyLoadedUserDetails(user: User){
-        hideProgressDialog()
+        dismissProgressDialog()
         mUser = user
     }
 
@@ -158,6 +164,10 @@ class CheckoutActivity : BaseActivity() {
         toolbarCheckout.setNavigationOnClickListener{ onBackPressed()}
     }
 
+
+    /**
+     * function to implement flutterwave payment process
+     */
     private fun payFlutter(){
 
         RaveUiManager(this)
@@ -181,14 +191,14 @@ class CheckoutActivity : BaseActivity() {
     }
 
 
-    private fun placeOrder(){
-        showProgressDialog(resources.getString(R.string.please_wait))
+    private fun orderItems(){
+        displayProgressDialog(resources.getString(R.string.please_wait))
 
-        if (mAddressDetails != null){
+        if (mUserAddress != null){
             mOrderDetails = Order(
                 FirestoreClass().getCurrentUserID(),
                 mCartList,
-                mAddressDetails!!,
+                mUserAddress!!,
                 "Order ${FirestoreClass().getCurrentUserID()} ${System.currentTimeMillis()}",
                 mCartList[0].image,
                 mSubTotal.toString(),
@@ -199,13 +209,13 @@ class CheckoutActivity : BaseActivity() {
 
             )
             FirestoreClass().placeOrder(this, mOrderDetails)
-            showProgressDialog(resources.getString(R.string.please_wait))
+            displayProgressDialog(resources.getString(R.string.please_wait))
         }
 
     }
 
     fun successfullyUpdatedAllDetails(){
-        hideProgressDialog()
+        dismissProgressDialog()
 
         Toast.makeText(
             this,
@@ -231,7 +241,7 @@ class CheckoutActivity : BaseActivity() {
             val message: String = intent.getStringExtra("response").toString()
             if (resultCode === RavePayActivity.RESULT_SUCCESS) {
                 Toast.makeText(this, "SUCCESS $message", Toast.LENGTH_SHORT).show()
-                placeOrder()
+                orderItems()
             } else if (resultCode === RavePayActivity.RESULT_ERROR) {
                 Toast.makeText(this, "ERROR $message", Toast.LENGTH_SHORT).show()
             } else if (resultCode === RavePayActivity.RESULT_CANCELLED) {
