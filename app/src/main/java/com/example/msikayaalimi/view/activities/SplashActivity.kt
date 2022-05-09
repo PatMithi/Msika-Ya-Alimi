@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.example.msikayaalimi.Firestore.FirestoreClass
 import com.example.msikayaalimi.R
 
 
@@ -19,6 +20,10 @@ class SplashActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
         } else {
+            /**
+             * Hides the notifications bar to display the application in full screen mode
+             *
+             */
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -26,12 +31,29 @@ class SplashActivity : AppCompatActivity() {
         }
 
         @Suppress("DEPRECATION")
+        /**
+         *
+         */
         Handler().postDelayed(
             {
-                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                /**
+                 * Checks if the user is still logged into the application,
+                 * if they are they are redirected to the Welcome screen,
+                 * otherwise they are sent to the login screen
+                 */
+                val userID = FirestoreClass().getCurrentUserID()
+
+                if (userID.isNotEmpty()) {
+                    val intent  = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                else {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                }
                 finish()
             },
-            2500
+            3000
         )
     }
 }
