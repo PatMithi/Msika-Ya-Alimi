@@ -106,7 +106,7 @@ class ProductsFragment : BaseFragment() {
   }
 
   private suspend fun getUserDetails() {
-    FirestoreClass().getUserDetailsUserType(this@ProductsFragment)
+    FirestoreClass().getUserDetailsUserType(this)
 //    showProgressDialog(resources.getString(R.string.please_wait))
   }
 
@@ -165,7 +165,7 @@ class ProductsFragment : BaseFragment() {
   }
 
   fun deletedProductSuccessfully() {
-    hideProgressDialog()
+    dismissProgressDialog()
 
     Toast.makeText(
       requireActivity(),
@@ -173,7 +173,7 @@ class ProductsFragment : BaseFragment() {
       Toast.LENGTH_SHORT
     ).show()
 
-    GlobalScope.launch(Dispatchers.IO) {
+    GlobalScope.launch(Dispatchers.Main) {
       getProductsList()
     }
 
@@ -196,11 +196,11 @@ class ProductsFragment : BaseFragment() {
 
     // set the message to be displayed to the user
     builder.setMessage(resources.getString(R.string.delete_dialog_message))
-    builder.setIcon(android.R.drawable.ic_dialog_alert)
+    builder.setIcon(R.drawable.ic_delete_alert)
 
     // if the action is confirmed, the Firestore class will be called to delete the product
     builder.setPositiveButton(resources.getString(R.string.yes)) { dialogInterface, _ ->
-      showProgressDialog(resources.getString(R.string.please_wait))
+      displayProgressDialog(resources.getString(R.string.please_wait))
       FirestoreClass().deleteProduct(this, productID)
       dialogInterface.dismiss()
     }

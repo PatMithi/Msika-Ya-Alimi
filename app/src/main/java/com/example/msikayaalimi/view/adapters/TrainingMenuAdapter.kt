@@ -19,6 +19,10 @@ import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.GlideLoader
 import com.example.msikayaalimi.controller.MYATextView
 
+/**
+ * Adapter used to load the training menu items from Firebase and display the items
+ * on the activity.
+ */
 class TrainingMenuAdapter (
     private val context: Context,
     private var list: ArrayList<TrainingMenuItem>

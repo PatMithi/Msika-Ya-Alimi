@@ -12,6 +12,10 @@ import com.example.msikayaalimi.controller.MYATextViewBold
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * Class to display the products that a farmer has sold
+ * code adapted from online course
+ */
 class ViewSoldProductDetails : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +49,9 @@ class ViewSoldProductDetails : BaseActivity() {
 
     }
 
+    /**
+     * function to load the details of the product that a farmer has sold
+     */
     private fun getSoldProductDetails(productDetails: SoldProduct) {
 
         val tvSoldProductId:MYATextView = findViewById(R.id.tv_sold_products_order_id)

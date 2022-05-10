@@ -13,6 +13,9 @@ import com.example.msikayaalimi.view.activities.ViewQuizActivity
 import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYATextViewBold
 
+/**
+ * Adapters used to load each item in the quiz menu
+ */
 class QuizMenuAdapter (
     private val context: Context,
     private var list: ArrayList<TrainingMenuItem>

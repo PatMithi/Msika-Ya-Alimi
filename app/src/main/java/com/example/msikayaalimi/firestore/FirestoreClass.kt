@@ -401,7 +401,7 @@ class FirestoreClass {
             .addOnFailureListener {
                 e ->
 
-                fragment.hideProgressDialog()
+                fragment.dismissProgressDialog()
 
                 Log.e(
                     fragment.requireActivity().javaClass.simpleName,
@@ -1184,7 +1184,7 @@ class FirestoreClass {
 
             }.addOnFailureListener { e ->
 
-                fragment.hideProgressDialog()
+                fragment.dismissProgressDialog()
 
                 Log.e(fragment.javaClass.simpleName, "Error while loading sold products", e)
 

@@ -14,6 +14,9 @@ import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.GlideLoader
 import com.example.msikayaalimi.controller.MYATextViewBold
 
+/**
+ * Adapter used to display the filters loaded on the welcome screen
+ */
 class WelcomeFilterAdapter(
     private val context: Context,
     private var list: ArrayList<Welcome>

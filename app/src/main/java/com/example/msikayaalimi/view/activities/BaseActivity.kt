@@ -9,6 +9,10 @@ import com.example.msikayaalimi.R
 import com.example.msikayaalimi.controller.MYATextView
 import com.google.android.material.snackbar.Snackbar
 
+/**
+ * Class to store functions which will be used by most classes
+ * Code adapted from online courses
+ */
 open class BaseActivity : AppCompatActivity() {
 
     private var exitClickedOnce = false

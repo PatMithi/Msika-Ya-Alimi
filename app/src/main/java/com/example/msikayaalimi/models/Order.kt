@@ -3,6 +3,10 @@ package com.example.msikayaalimi.models
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
+/**
+ * Data model used to created the fields for to store order details
+ * Code adapted from online course
+ */
 @Parcelize
 data class Order(
     val user_id:String = "",

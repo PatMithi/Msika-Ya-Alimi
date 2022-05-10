@@ -18,6 +18,10 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
+/**
+ * Class to register user to the application
+ * Code adapted from online course
+ */
 class RegisterActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +44,9 @@ class RegisterActivity : BaseActivity() {
         }
     }
 
+    /**
+     * Code to display the toolbar and add the activity title and back button
+     */
     private fun setupActionBar() {
         val toolbarRegister = findViewById<Toolbar>(R.id.toolbar_register_activity)
         setSupportActionBar(toolbarRegister)
@@ -58,12 +65,12 @@ class RegisterActivity : BaseActivity() {
      */
 
     private fun validateRegistrationDetails(): Boolean {
-        val fstName= findViewById(R.id.et_first_name) as MYAEditText
-        val lstName = findViewById(R.id.et_last_name) as MYAEditText
-        val eMail = findViewById(R.id.et_email) as MYAEditText
-        val fstPassword = findViewById(R.id.et_password) as MYAEditText
-        val confirmPassword = findViewById(R.id.et_confirm_password) as MYAEditText
-        val cbTerms = findViewById(R.id.cb_terms_and_conditions) as AppCompatCheckBox
+        val fstName= findViewById<MYAEditText>(R.id.et_first_name)
+        val lstName = findViewById<MYAEditText>(R.id.et_last_name)
+        val eMail = findViewById<MYAEditText>(R.id.et_email)
+        val fstPassword = findViewById<MYAEditText>(R.id.et_password)
+        val confirmPassword = findViewById<MYAEditText>(R.id.et_confirm_password)
+        val cbTerms = findViewById<AppCompatCheckBox>(R.id.cb_terms_and_conditions)
 
         return when {
             TextUtils.isEmpty(fstName.text.toString().trim { it <= ' '}) -> {
@@ -102,13 +109,15 @@ class RegisterActivity : BaseActivity() {
         }
     }
 
-
+    /**
+     * Function to verify the user then create their account upon successful validation
+     */
     private fun registerUser() {
-        val eMail = findViewById(R.id.et_email) as MYAEditText
-        val fstPassword = findViewById(R.id.et_password) as MYAEditText
-        val fstName= findViewById(R.id.et_first_name) as MYAEditText
-        val lstName = findViewById(R.id.et_last_name) as MYAEditText
-        val confirmPassword = findViewById(R.id.et_confirm_password) as MYAEditText
+        val eMail = findViewById<MYAEditText>(R.id.et_email)
+        val fstPassword = findViewById<MYAEditText>(R.id.et_password)
+        val fstName= findViewById<MYAEditText>(R.id.et_first_name)
+        val lstName = findViewById<MYAEditText>(R.id.et_last_name)
+        val confirmPassword = findViewById<MYAEditText>(R.id.et_confirm_password)
         val rbUserType:MYARadioButton = findViewById(R.id.rb_customer)
         val userType = if(rbUserType.isChecked) {
             Constants.CUSTOMER

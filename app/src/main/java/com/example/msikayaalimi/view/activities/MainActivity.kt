@@ -48,7 +48,7 @@ class MainActivity : BaseActivity() {
 
         val btnLaunch:MYAButton = findViewById(R.id.btn_launch_market)
         btnLaunch.setOnClickListener {
-            startActivity(Intent(this@MainActivity, MarketActivity::class.java))
+            startActivity(Intent(this, MarketActivity::class.java))
         }
 
     }

@@ -17,6 +17,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+/**
+ * CAdapter used to load the items in the market fragment
+ * As there will be multiple items with the same layout adapter is used to prevent
+ * reusing the same code multiple times
+ * Code adapted from online course
+ */
 class MarketItemsAdapter (
     private val context: Context,
     private var list: ArrayList<Product>

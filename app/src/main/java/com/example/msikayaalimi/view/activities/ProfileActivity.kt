@@ -23,6 +23,10 @@ import com.example.msikayaalimi.controller.GlideLoader
 import com.facebook.shimmer.ShimmerFrameLayout
 import java.io.IOException
 
+/**
+ * Class to load the profile screen and allow user to edit their profile
+ * Code adapted from online course
+ */
 class ProfileActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var mUserDetails: User
@@ -51,7 +55,10 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
         val scrollView:ScrollView = findViewById(R.id.sv_profile_activity)
 
 
-
+        /**
+         * Prompts user to complete their profile before they proceed to the application
+         * Only happens when a user has just created their account
+         */
         if(mUserDetails.profileCompleted == 0){
 
             tvTitle.text = resources.getString(R.string.complete_profile_title)
@@ -101,6 +108,9 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
 
     }
 
+    /**
+     * Function to setup the toolbar used to store the activity title and back button
+     */
     private fun setupActionBar() {
         val profileToolbar:Toolbar = findViewById(R.id.toolbar_profile_activity)
 
@@ -115,6 +125,9 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
         profileToolbar.setNavigationOnClickListener { onBackPressed() }
     }
 
+    /**
+     * Function to handle how the activity components will behave once they have been clicked
+     */
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
@@ -164,6 +177,9 @@ class ProfileActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
+    /**
+     * Function to call the FirestoreClass class to update the current user's profile
+     */
     private fun updateProfileDetails() {
         val etMobileNumber:MYAEditText = findViewById(R.id.et_mobile_number)
         val rbMale:MYARadioButton = findViewById(R.id.rb_male)

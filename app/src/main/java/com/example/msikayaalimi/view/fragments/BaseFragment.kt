@@ -26,7 +26,7 @@ open class BaseFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_base, container, false)
     }
 
-    fun showProgressDialog(text:String) {
+    fun displayProgressDialog(text:String) {
 
         mProgressDialog = Dialog(requireActivity())
 
@@ -40,7 +40,7 @@ open class BaseFragment : Fragment() {
         mProgressDialog.show()
     }
 
-    fun hideProgressDialog() {
+    fun dismissProgressDialog() {
         mProgressDialog.dismiss()
     }
 }

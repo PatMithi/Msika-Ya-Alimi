@@ -10,6 +10,10 @@ import com.example.msikayaalimi.R
 import com.example.msikayaalimi.models.Address
 import com.example.msikayaalimi.controller.*
 
+/**
+ * Class used to disply the form used to add or update an address
+ * Code adapted from online course
+ */
 class UpdateAddressActivity : BaseActivity(), View.OnClickListener {
 
     private var mAddressDetails:Address? = null

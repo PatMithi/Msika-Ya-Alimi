@@ -8,6 +8,9 @@ import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYAButton
 import com.example.msikayaalimi.controller.MYATextView
 
+/**
+ * Class to display the quiz results to the user
+ */
 class QuizResultActivity : AppCompatActivity() {
 
     private var mQuizResult:String = "0"

@@ -17,8 +17,15 @@ import com.example.msikayaalimi.models.QuizQuestions
 import com.example.msikayaalimi.controller.*
 import com.facebook.shimmer.ShimmerFrameLayout
 
+/**
+ * Class used to display the quiz in the activity
+ * Code adapted from online
+ */
 class ViewQuizActivity : BaseActivity(), View.OnClickListener {
 
+    /**
+     * Variable used to store the current item the user has selected
+     */
     private var mCurrentPosition: Int = 1
     private var mQuestionsList:ArrayList<QuizQuestions>? = null
     private var mSelectedAnswer:Int = 0
@@ -37,6 +44,10 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
         }
 
         getQuizQuestions()
+        /**
+         * Shimmer layout starts loading as the application is retrieving the
+         * quiz information.
+         */
         val shimmerFrameLayout:ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_view_quiz)
         shimmerFrameLayout.visibility = View.VISIBLE
         shimmerFrameLayout.startShimmerAnimation()
@@ -74,10 +85,7 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
      * used to retrieve the questions
      */
     private fun getQuizQuestions(){
-//        val shimmerFrameLayout:ShimmerFrameLayout = findViewById(R.id.shimmerFrameLayout_view_quiz)
-//        shimmerFrameLayout.startShimmerAnimation()
 
-        // Resets the quiz so that none of the answers are selected.
         resetAnswers()
 
         FirestoreClass().getQuestions(this, mQuiz)
@@ -103,18 +111,6 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
         val tvQuestionNumber:MYATextView = findViewById(R.id.tv_question_number)
         val btnSubmit:MYAButton = findViewById(R.id.btn_submit_answer)
         val svViewQuiz:ScrollView = findViewById(R.id.sv_view_quiz)
-
-
-//        tvQuestion.visibility = View.VISIBLE
-//        tvAnswerOne.visibility = View.VISIBLE
-//        tvAnswerTwo.visibility = View.VISIBLE
-//        tvAnswerThree.visibility = View.VISIBLE
-//        tvAnswerFour.visibility = View.VISIBLE
-//        ivQuestionImage.visibility = View.VISIBLE
-//        pbQuestion.visibility = View.VISIBLE
-//        tvQuestionNumber.visibility = View.VISIBLE
-//        btnSubmit.visibility = View.VISIBLE
-
 
 
         mQuestionsList = questions.questions
@@ -274,8 +270,6 @@ class ViewQuizActivity : BaseActivity(), View.OnClickListener {
         val tvAnswerTwo:MYATextView = findViewById(R.id.tv_answer_two)
         val tvAnswerThree:MYATextView = findViewById(R.id.tv_answer_three)
         val tvAnswerFour:MYATextView = findViewById(R.id.tv_answer_four)
-
-
 
         when(answer){
             1->{

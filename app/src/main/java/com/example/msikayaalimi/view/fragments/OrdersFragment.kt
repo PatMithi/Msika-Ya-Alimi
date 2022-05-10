@@ -18,7 +18,11 @@ import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYATextView
 import com.facebook.shimmer.ShimmerFrameLayout
 
-
+/**
+ * Fragment used to display the items a user has sold if the user is a farmer
+ * or the orders a customer has purchased
+ * Code adapted from online course
+ */
 class OrdersFragment : BaseFragment() {
 
   private lateinit var binding:View
@@ -39,9 +43,13 @@ class OrdersFragment : BaseFragment() {
     getUserDetails()
   }
 
+  /**
+   * Gets the current user's details to determine which items should be displayed in the fragment
+   * If the user is a farmer it displays an option tab to allow the farmer to decide whether they
+   * want to see the items they have sold or the orders they have made.
+   */
   private fun getUserDetails() {
     FirestoreClass().getUserDetailsUserType(this)
-//    showProgressDialog(resources.getString(R.string.please_wait))
   }
 
   fun successfullyLoadedUserDetails(user: User) {

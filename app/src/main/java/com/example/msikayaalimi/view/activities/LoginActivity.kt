@@ -44,6 +44,9 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
     }
 
+    /**
+     * Code below adapted from online courses
+     */
     override fun onClick(v: View) {
         if (v != null) {
             when (v.id) {

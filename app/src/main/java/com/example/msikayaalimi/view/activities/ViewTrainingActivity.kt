@@ -18,6 +18,9 @@ import com.example.msikayaalimi.models.TrainingMenuItem
 import com.example.msikayaalimi.view.adapters.QuizMenuAdapter
 import com.example.msikayaalimi.controller.*
 
+/**
+ * Class used to load the training menu from Firebase anf display it on the application
+ */
 class ViewTrainingActivity : BaseActivity() {
     private lateinit var mMenuItemId: String
     private lateinit var mMenuItem: TrainingMenuItem
@@ -46,7 +49,7 @@ class ViewTrainingActivity : BaseActivity() {
 
     }
 
-    fun getMenuItemDetails() {
+    private fun getMenuItemDetails() {
 
         FirestoreClass().getCurrentMenuItem(this, mMenuItemId)
         displayProgressDialog(resources.getString(R.string.please_wait))

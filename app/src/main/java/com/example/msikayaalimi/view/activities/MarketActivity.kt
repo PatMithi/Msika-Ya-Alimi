@@ -15,9 +15,18 @@ import com.example.msikayaalimi.view.fragments.ProductsFragment
 import com.example.msikayaalimi.controller.Constants
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 
+/**
+ * Class used to manage all how the user navigates through the market
+ * Handles the icons displayed in the bottom navigation menu
+ */
 class MarketActivity : BaseActivity() {
     private lateinit var mUser: User
 
+    /**
+     * Checks the current users details to determine which icons to display
+     * Shows the relevant icons to help the user navigate to pages they are intended to
+     * for their user type.
+     */
     fun successfullyLoadedUserDetails(user:User) {
         dismissProgressDialog()
         mUser = user
@@ -76,11 +85,8 @@ class MarketActivity : BaseActivity() {
 
 
     private fun getUserDetails() {
-        FirestoreClass().getUserDetails(this@MarketActivity)
+        FirestoreClass().getUserDetails(this)
         displayProgressDialog(resources.getString(R.string.please_wait))
     }
-
-
-
 
 }

@@ -16,6 +16,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
+/**
+ * Class used to display the details of a specific item which a user has ordered
+ * Code adapted from online course
+ */
 class ViewOrderDetails : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,24 +56,33 @@ class ViewOrderDetails : BaseActivity() {
         val orderDetailsID:MYATextView = findViewById(R.id.tv_view_order_id)
         orderDetailsID.text = orderDetails.title
 
-        // Format date will be displayed
-        val dateFormat = "dd MMM yyyy HH:mm"
-
-        //create a DateFormatter object for displaying the date
-        val formatter = SimpleDateFormat(dateFormat, Locale.getDefault())
-
-        // create  a calendar object that will display the date and time value in mm to date
+        /**
+         * Converts the millisecond time stored in the database to a date object
+         */
         val calendar:Calendar = Calendar.getInstance()
         calendar.timeInMillis = orderDetails.order_datetime
+
+        /**
+         * the format used to store the date
+         */
+        val dateFormat = "dd MMM yyyy HH:mm"
+
+        //creates a DateFormatter object for displaying the date
+        val formatter = SimpleDateFormat(dateFormat, Locale.getDefault())
+
+
 
         val orderDateTime = formatter.format(calendar.time)
         val tvOrderDate:MYATextView = findViewById(R.id.tv_view_order_date)
         tvOrderDate.text = orderDateTime
 
-        // Get the difference between the order date time and current date time in hours.
-        // If the difference in hours is 1 or less then the order status will be PENDING.
-        // If the difference in hours is 2 or greater then 1 then the order status will be PROCESSING.
-        // And, if the difference in hours is 3 or greater then the order status will be DELIVERED.
+        /**
+         * Checks the difference between the time the order was placed and the current time
+         * If the time difference is less than an hour, the order will still be pending
+         * If the time difference is greater than an hour but less than two, the order is being processed
+         * Any value greater and the order will be delivered
+         * Temporary solution
+         */
 
         val diffInMilliSeconds: Long = System.currentTimeMillis() - orderDetails.order_datetime
         val diffInHours: Long = TimeUnit.MILLISECONDS.toHours(diffInMilliSeconds)

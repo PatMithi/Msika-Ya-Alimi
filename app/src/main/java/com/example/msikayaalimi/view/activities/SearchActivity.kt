@@ -13,10 +13,29 @@ import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYATextView
 import com.google.firebase.firestore.Query
 
+/**
+ * Class used to display the search and filter options a user can utilise
+ */
+
 class SearchActivity : BaseActivity() {
+
+    /**
+     * Variable used to store the item which has been searched in the search fragment
+     */
     private lateinit var mSearch:String
+
+
+    /**
+     * Variable to store which sort option has been selected from the previous search fragment
+     */
     private lateinit var mSortOrder:String
+
+    /**
+     * Variable used to store which field has been used as the filter
+     * criteria e.g product category, owner, location etc.
+     */
     private lateinit var mSortField:String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
@@ -62,12 +81,11 @@ class SearchActivity : BaseActivity() {
     private fun getSearchProducts(word:String){
 
         FirestoreClass().getProductSearchResults(this, word)
-//        showProgressDialog(resources.getString(R.string.please_wait))
+
     }
 
     fun successfullyLoadedSearchResults(productsList: ArrayList<Product>){
-//
-//        hideProgressDialog()
+
         val rvSearchResults:RecyclerView = findViewById(R.id.rv_search_results)
         val tvEmptySearch:MYATextView = findViewById(R.id.tv_no_items_found_for_search)
 

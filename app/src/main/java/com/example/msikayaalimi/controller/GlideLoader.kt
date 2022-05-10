@@ -6,16 +6,18 @@ import com.bumptech.glide.Glide
 import com.example.msikayaalimi.R
 import java.io.IOException
 
+/**
+ * Class used to load images from Firebase
+ * Code adapted from open source Glide github repository
+ */
 class GlideLoader(val context: Context) {
 
-    // TODO Step 8: Update the function definition to load the image using Glide library. Earlier we used to load it from Uri but here it is URL so make the image type as Any. So, if we pass Uri or URL it will load it.
-    // START
     /**
      * A function to load image from URI for the user profile picture.
      */
     fun loadUserImage(image: Any, imageView: ImageView) {
         try {
-            // Load the user image in the ImageView.
+            // Loads the user image in the ImageView.
             Glide
                 .with(context)
                 .load(image) // Uri or URL of the image
@@ -40,5 +42,4 @@ class GlideLoader(val context: Context) {
             e.printStackTrace()
         }
     }
-    // END
 }

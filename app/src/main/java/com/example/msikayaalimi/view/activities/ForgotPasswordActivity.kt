@@ -8,6 +8,10 @@ import com.example.msikayaalimi.controller.MYAButton
 import com.example.msikayaalimi.controller.MYAEditText
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ * Class used to display options a user can take when they have forgotten their password
+ * Code adapted from online course
+ */
 class ForgotPasswordActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +21,7 @@ class ForgotPasswordActivity : BaseActivity() {
     }
 
     private fun setupActionBar() {
-        val toolbarForgotPassword = findViewById(R.id.toolbar_forgot_password_activity) as Toolbar
+        val toolbarForgotPassword = findViewById<Toolbar>(R.id.toolbar_forgot_password_activity)
         setSupportActionBar(toolbarForgotPassword)
 
         val actionBar = supportActionBar
@@ -31,7 +35,7 @@ class ForgotPasswordActivity : BaseActivity() {
         val btnSubmit: MYAButton = findViewById(R.id.btn_submit)
 
         btnSubmit.setOnClickListener{
-            val email = findViewById(R.id.et_email_forgotten) as MYAEditText
+            val email = findViewById<MYAEditText>(R.id.et_email_forgotten)
 
 
             if (email.text.toString().trim { it <= ' '}.isEmpty())  {
@@ -45,7 +49,7 @@ class ForgotPasswordActivity : BaseActivity() {
                         if (task.isSuccessful) {
                             // Show the toast message and finish the forgot password activity to return to login screen
                             Toast.makeText(
-                                this@ForgotPasswordActivity,
+                                this,
                                 resources.getString(R.string.email_successfully_sent),
                                 Toast.LENGTH_LONG
                             ).show()

@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.example.msikayaalimi.R
 
+/**
+ * Class to display the quiz menu in the training section
+ */
 class QuizMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -17,6 +17,10 @@ import com.example.msikayaalimi.controller.GlideLoader
 import com.example.msikayaalimi.controller.MYATextView
 import com.example.msikayaalimi.controller.MYATextViewBold
 
+/**
+ * Code used to load the products created by the current user, only available for farmers
+ * application.
+ */
 open class UserProductsListAdapter (
     private val context: Context,
     private var list: ArrayList<Product>,

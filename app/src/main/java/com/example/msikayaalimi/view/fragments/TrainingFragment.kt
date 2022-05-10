@@ -20,7 +20,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
+/**
+ * Fragment used to load the training menu items from the farmer's side
+ */
 open class TrainingFragment : BaseFragment() {
 
     private lateinit var mMenuItemList:ArrayList<TrainingMenuItem>
@@ -52,12 +54,10 @@ open class TrainingFragment : BaseFragment() {
     }
 
     private suspend fun getUserDetails() {
-        FirestoreClass().getUserDetailsUserType(this@TrainingFragment)
-//        showProgressDialog(resources.getString(R.string.please_wait))
+        FirestoreClass().getUserDetailsUserType(this)
     }
 
     suspend fun successfullyLoadedUserDetails(user: User) {
-//        hideProgressDialog()
         mUser = user
 
         if (mUser.userType == Constants.CUSTOMER) {

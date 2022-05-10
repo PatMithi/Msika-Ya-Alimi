@@ -15,6 +15,12 @@ import com.example.msikayaalimi.controller.GlideLoader
 import com.example.msikayaalimi.controller.MYATextView
 import com.example.msikayaalimi.controller.MYATextViewBold
 
+/**
+ * Adapter used to store the orders that a user has sold
+ * Adapter used as there will be multiple items with the same layout;
+ * helps prevent repeated code
+ * Code adapted from online course
+ */
 open class MyOrdersListAdapter(
     private val context: Context,
     private var list: ArrayList<Order>

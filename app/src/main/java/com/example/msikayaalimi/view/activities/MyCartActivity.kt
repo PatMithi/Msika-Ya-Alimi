@@ -19,6 +19,9 @@ import com.example.msikayaalimi.controller.MYATextView
 import com.example.msikayaalimi.controller.MYATextViewBold
 import com.facebook.shimmer.ShimmerFrameLayout
 
+/**
+ * Code adapted from online course
+ */
 class MyCartActivity : BaseActivity() {
 
     // global variable to take care of the lists of products and cart items

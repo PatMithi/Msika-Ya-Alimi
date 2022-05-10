@@ -10,7 +10,10 @@ import android.view.WindowManager
 import com.example.msikayaalimi.Firestore.FirestoreClass
 import com.example.msikayaalimi.R
 
-
+/**
+ * Code to show the application logo while loading the application
+ * Code adapted from online course
+ */
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -5,6 +5,10 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
 
+/**
+ * Code to maintain default application font in the edit text inputs
+ * Code adapted from online course
+ */
 class MYAEditText(context: Context, attrs:AttributeSet): AppCompatEditText(context, attrs) {
 
     init {
