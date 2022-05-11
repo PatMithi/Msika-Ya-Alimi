@@ -26,6 +26,11 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 
+/**
+ * Fragment to load the products a user has greated if the user is a farmer
+ * or load the filter menu if the user is a customer
+ * code adapted from online course.
+ */
 class ProductsFragment : BaseFragment() {
 
   private lateinit var binding:View

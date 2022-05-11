@@ -22,6 +22,8 @@ import kotlinx.coroutines.launch
 
 /**
  * Fragment used to load the training menu items from the farmer's side
+ * Or loads yhe search options if the user is a customer
+ * code adapted from online course.
  */
 open class TrainingFragment : BaseFragment() {
 

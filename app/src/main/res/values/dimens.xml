@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    // File used to store the dimensions of the UI components
+
+
     <dimen name="splash_title_text_size">35sp</dimen>
     <dimen name="button_background_radius">10dp</dimen>
 

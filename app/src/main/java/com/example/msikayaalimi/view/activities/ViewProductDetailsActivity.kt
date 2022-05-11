@@ -18,6 +18,10 @@ import com.example.msikayaalimi.controller.GlideLoader
 import com.example.msikayaalimi.controller.MYAButton
 import com.example.msikayaalimi.controller.MYATextView
 
+/**
+ * Code used to view the details of a selected product
+ * Code adapted from online course.
+ */
 class ViewProductDetailsActivity : BaseActivity(), View.OnClickListener{
 
     private var mProductID: String = ""

@@ -15,6 +15,10 @@ import com.example.msikayaalimi.controller.GlideLoader
 import com.example.msikayaalimi.controller.MYATextView
 import com.example.msikayaalimi.controller.MYATextViewBold
 
+/**
+ * Adapter used to display the items a user has sold
+ * code adapted from online course
+ */
 open class SoldProductsListAdapter(
     private val context: Context,
     private var list: ArrayList<SoldProduct>

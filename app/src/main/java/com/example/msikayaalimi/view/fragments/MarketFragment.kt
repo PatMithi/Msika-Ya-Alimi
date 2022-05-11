@@ -17,6 +17,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+/**
+ * Fragment used to load the items from Google Firebase and load them into the fragment components
+ * code adaplted from online course
+ */
 class MarketFragment : BaseFragment() {
 
   private lateinit var binding:View

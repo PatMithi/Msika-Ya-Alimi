@@ -9,6 +9,10 @@ import android.view.ViewGroup
 import com.example.msikayaalimi.R
 import com.example.msikayaalimi.controller.MYATextView
 
+/**
+ * Fragment used to store functions which will be used by multiple fragments
+ * code adapted from online course
+ */
 open class BaseFragment : Fragment() {
 
     private lateinit var mProgressDialog :Dialog

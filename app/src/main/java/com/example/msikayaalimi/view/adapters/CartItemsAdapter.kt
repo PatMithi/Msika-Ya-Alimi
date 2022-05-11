@@ -18,6 +18,10 @@ import com.example.msikayaalimi.controller.GlideLoader
 import com.example.msikayaalimi.controller.MYATextView
 import com.example.msikayaalimi.controller.MYATextViewBold
 
+/**
+ * Adapter to display the list of items in the cart
+ * code adapted from online course
+ */
 class CartItemsAdapter (
     private val context: Context,
     private var list: ArrayList<CartItem>,

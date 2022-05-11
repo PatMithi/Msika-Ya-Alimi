@@ -1,4 +1,10 @@
 <resources>
+
+    // File used to store the strings used in the application
+    // Strings stored in this file to so that it is easier to translate
+    // the text of the whole application/
+
+
     // Authentication Strings
     <string name="app_name">MsikaYaAlimi</string>
     <string name="content_description">image</string>

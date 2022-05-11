@@ -20,6 +20,7 @@ import com.example.msikayaalimi.controller.MYATextViewBold
 import com.facebook.shimmer.ShimmerFrameLayout
 
 /**
+ * Code to load the cart actiity and display the items in a user's cart
  * Code adapted from online course
  */
 class MyCartActivity : BaseActivity() {

@@ -13,6 +13,9 @@ import com.example.msikayaalimi.controller.Constants
 import com.example.msikayaalimi.controller.MYATextView
 import com.example.msikayaalimi.controller.MYATextViewBold
 
+/**
+ * Class used to diplay the filtered products
+ */
 class FilteredProductsActivity : BaseActivity() {
 
     private var mCategory:String = ""

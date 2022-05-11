@@ -19,7 +19,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
+/**
+ * Adapter used to display the list of addresses in the address activity
+ * Adapted from online course
+ */
 class AddressListAdapter (
     private val context: Context,
     private var list: ArrayList<Address>,

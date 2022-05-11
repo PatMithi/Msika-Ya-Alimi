@@ -23,6 +23,10 @@ import com.example.msikayaalimi.controller.MYAButton
 import com.example.msikayaalimi.controller.MYATextViewBold
 
 
+/**
+ * Class used to load the items ready to be checked out and display the Flutterwave API
+ * Code adapted from online course
+ */
 class CheckoutActivity : BaseActivity() {
 
     private lateinit var mUser: User
@@ -167,6 +171,7 @@ class CheckoutActivity : BaseActivity() {
 
     /**
      * function to implement flutterwave payment process
+     * code adapted from Flutterwave API
      */
     private fun payFlutter(){
 

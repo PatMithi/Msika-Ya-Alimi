@@ -19,7 +19,10 @@ import com.example.msikayaalimi.controller.*
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.firebase.auth.FirebaseAuth
 
-//import com.google.firebase.auth.FirebaseAuth
+/**
+ * Class used to load the login activity and display the login screen
+ * Code adapted from online course
+ */
 
 class LoginActivity : BaseActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
