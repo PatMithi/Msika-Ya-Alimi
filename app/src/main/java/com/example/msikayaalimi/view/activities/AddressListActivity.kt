@@ -16,6 +16,13 @@ import com.example.msikayaalimi.view.adapters.AddressListAdapter
 import com.example.msikayaalimi.controller.*
 import com.facebook.shimmer.ShimmerFrameLayout
 
+/**
+ * Code to load the list of addresses for the current user
+ * Code adapted from online course
+ * NB: All documentation with "code adapted from online course"
+ * indicate that the some code in the class has been adapted from the course
+ * taught by Denis Panjuta titles "Android Firebase Firestore - Masterclass"
+ */
 class AddressListActivity : BaseActivity(), View.OnClickListener {
 
     private var mAddressSelected:Boolean = false

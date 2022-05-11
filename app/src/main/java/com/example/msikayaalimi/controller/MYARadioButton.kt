@@ -5,6 +5,10 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatRadioButton
 
+/**
+ * Class to maintain app font in radio button
+ * adapted from online
+ */
 class MYARadioButton(context: Context, attributeSet: AttributeSet):AppCompatRadioButton(context, attributeSet) {
 
     init {

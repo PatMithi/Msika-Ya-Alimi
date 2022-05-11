@@ -5,6 +5,10 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 
+/**
+ * Class to assign default font to textview
+ * adapted from online course
+ */
 class MYATextViewBold (context: Context, attrs:AttributeSet):AppCompatTextView(context, attrs){
     init {
         applyFont()

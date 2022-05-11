@@ -20,6 +20,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+/**
+ * Class used to store and retrieve data from Firestore
+ */
 class FirestoreClass {
 
     private val mFirestore = FirebaseFirestore.getInstance()
